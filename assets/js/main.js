@@ -127,24 +127,6 @@ const BIBTEX_ENTRIES = {
   author = {Yang, Yaobin},
   year   = {2024},
   school = {University of California, Berkeley}
-}`,
-  "yang2026pf_thm": `@unpublished{yang2026pf_thm,
-  author = {Yang, Yaobin and Soga, Kenichi},
-  title  = {A Monolithic 5-Field Thermo-Hydro-Mechanical and Variational Phase-Field Fracture Framework with Matrix-Free Geometric Multigrid for Unsaturated Porous Media},
-  year   = {2026},
-  note   = {Manuscript in Preparation}
-}`,
-  "yang2026dpg": `@unpublished{yang2026dpg,
-  author = {Yang, Yaobin and Soga, Kenichi},
-  title  = {An Ultraweak Discontinuous Petrov-Galerkin Helmholtz Solver for Three-Phase Poroelastic Wave Propagation in Unsaturated Soil},
-  year   = {2026},
-  note   = {In Preparation for International Journal for Numerical Methods in Engineering}
-}`,
-  "yang2026mpm": `@unpublished{yang2026mpm,
-  author = {Yang, Yaobin and Soga, Kenichi},
-  title  = {Parallel 3D Material Point Method on Distributed Octree Grids with Bercovier-Pironneau Volumetric Projection and Tension Cracking for Rotary Drilling and Penetration in Sensitive Clay},
-  year   = {2026},
-  note   = {Manuscript in Preparation}
 }`
 };
 
