@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yaobin Yang, Ph.D. | UC Berkeley — Distributed Sensing & Computational Geomechanics</title>
+  <meta name="description" content="Academic homepage of Dr. Yaobin Yang, Postdoctoral Scholar in Civil and Environmental Engineering at UC Berkeley. Research in distributed fiber-optic sensing (DFOS/DAS), computational geomechanics (DG-FEM), physics-constrained inverse modeling, and smart infrastructure." />
+  <meta name="keywords" content="Yaobin Yang, UC Berkeley, Geotechnical Engineering, Distributed Fiber Optic Sensing, DFOS, DAS, Discontinuous Galerkin, DG-FEM, Cosserat Rod, PDE-Constrained Optimization, Smart Infrastructure" />
+  <meta name="author" content="Yaobin Yang" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- ========================================================================
+       Top Sticky Navigation Bar
+       ======================================================================== -->
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="#about" class="nav-brand">
+        <span class="brand-monogram">YY</span>
+        <span data-en="Yaobin Yang, Ph.D." data-zh="杨耀斌 博士">Yaobin Yang, Ph.D.</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#about" class="active" data-en="About" data-zh="关于我">About</a></li>
+          <li><a href="#research" data-en="Research" data-zh="研究方向">Research</a></li>
+          <li><a href="#publications" data-en="Publications" data-zh="学术论文">Publications</a></li>
+          <li><a href="#projects" data-en="Projects" data-zh="科研项目">Projects</a></li>
+          <li><a href="#experience" data-en="Experience" data-zh="教育与履历">Experience</a></li>
+          <li><a href="#teaching" data-en="Teaching & Service" data-zh="教学与服务">Teaching & Service</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-controls">
+        <button type="button" class="btn-control" id="lang-toggle" title="Switch Language / 切换语言">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span id="lang-label">中文</span>
+        </button>
+
+        <button type="button" class="btn-control" id="theme-toggle" title="Toggle Dark/Light Theme">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <span id="theme-label">Dark</span>
+        </button>
+
+        <button type="button" class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- ======================================================================
+         Hero / Profile Section
+         ====================================================================== -->
+    <section id="about" class="hero-section">
+      <div class="hero-card">
+        <div class="hero-grid">
+          <!-- Profile Photo & Institutional Badges -->
+          <div class="hero-profile-col">
+            <div class="avatar-wrapper">
+              <img src="assets/img/photo2.jpg" alt="Portrait of Dr. Yaobin Yang" />
+            </div>
+            <div class="affiliation-badges">
+              <div class="affil-badge berkeley">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                <span data-en="UC Berkeley · CEE" data-zh="加州大学伯克利分校 · 土木与环境工程系">UC Berkeley · CEE</span>
+              </div>
+              <div class="affil-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                <span data-en="Soga Research Group" data-zh="Soga 教授课题组">Soga Research Group</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bio & Quick Links -->
+          <div class="hero-content-col">
+            <div class="hero-eyebrow" data-en="Smart Geo-Infrastructure · Computational Mechanics · Distributed Sensing" data-zh="智能岩土与基础设施 · 高性能计算力学 · 分布式光纤传感">
+              Smart Geo-Infrastructure · Computational Mechanics · Distributed Sensing
+            </div>
+
+            <h1 class="hero-title">
+              <span>Yaobin Yang, Ph.D.</span>
+              <span class="zh-name">杨耀斌</span>
+            </h1>
+
+            <div class="hero-subtitle" data-en="Postdoctoral Researcher, Department of Civil and Environmental Engineering, University of California, Berkeley" data-zh="加州大学伯克利分校 土木与环境工程系 博士后研究员 (Postdoctoral Scholar)">
+              Postdoctoral Researcher, Department of Civil and Environmental Engineering, University of California, Berkeley
+            </div>
+
+            <p class="hero-bio"
+               data-en="I am a Postdoctoral Researcher in the Department of Civil and Environmental Engineering at <strong>UC Berkeley</strong>, working with <strong>Prof. Kenichi Soga</strong>, where I also earned my Ph.D. (with minors in Structural Engineering and Applied Mathematics) and M.Sc. Previously, I received my B.E. in Civil Engineering (minor in Applied Mathematics) from <strong>Tongji University</strong> and served as a Research Affiliate at <strong>Lawrence Berkeley National Laboratory (LBNL)</strong> and a Visiting Scientist at <strong>Rothamsted Research (UK)</strong>.<br><br>My research advances the sustainable monitoring, modeling, and resilience of civil and geotechnical infrastructure. By uniting <strong>distributed fiber-optic and acoustic sensing (DFOS/DAS)</strong>, <strong>high-performance matrix-free Discontinuous Galerkin finite element methods (DG-FEM)</strong>, and <strong>PDE-constrained inverse modeling (PDECO)</strong>, I build physics-grounded <em>sensing-to-inference</em> frameworks that transform passive buried lifelines, deep foundations, and 3D-printed structures into intelligent, self-diagnosing systems."
+               data-zh="我是<strong>加州大学伯克利分校（UC Berkeley）</strong>土木与环境工程系博士后研究员，合作导师为美国国家工程院院士、英国皇家工程院院士 <strong>Kenichi Soga 教授</strong>。我于加州大学伯克利分校获得土木工程博士学位（辅修结构工程与应用数学）及硕士学位，本科毕业于<strong>同济大学</strong>土木工程系（辅修应用数学），并曾任<strong>劳伦斯伯克利国家实验室（LBNL）</strong>研究学者及英国<strong>洛桑研究所（Rothamsted Research）</strong>访问科学家。<br><br>我的研究致力于推动土木与岩土基础设施的可持续监测、高性能建模与防灾韧性。通过将<strong>分布式光纤与声学传感（DFOS/DAS）</strong>、<strong>无矩阵间断伽辽金有限元法（DG-FEM）与相场断裂力学</strong>以及<strong>偏微分方程约束反演优化（PDECO）</strong>深度融合，构建物理驱动的“传感—反演—数字孪生”一体化框架。">
+              I am a Postdoctoral Researcher in the Department of Civil and Environmental Engineering at <strong>UC Berkeley</strong>, working with <strong>Prof. Kenichi Soga</strong>, where I also earned my Ph.D. (with minors in Structural Engineering and Applied Mathematics) and M.Sc. Previously, I received my B.E. in Civil Engineering (minor in Applied Mathematics) from <strong>Tongji University</strong> and served as a Research Affiliate at <strong>Lawrence Berkeley National Laboratory (LBNL)</strong> and a Visiting Scientist at <strong>Rothamsted Research (UK)</strong>.<br><br>My research advances the sustainable monitoring, modeling, and resilience of civil and geotechnical infrastructure. By uniting <strong>distributed fiber-optic and acoustic sensing (DFOS/DAS)</strong>, <strong>high-performance matrix-free Discontinuous Galerkin finite element methods (DG-FEM)</strong>, and <strong>PDE-constrained inverse modeling (PDECO)</strong>, I build physics-grounded <em>sensing-to-inference</em> frameworks that transform passive buried lifelines, deep foundations, and 3D-printed structures into intelligent, self-diagnosing systems.
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="hero-actions">
+              <a href="assets/docs/Yaobin_Yang_CV.pdf" target="_blank" rel="noopener" class="btn btn-primary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg>
+                <span data-en="Curriculum Vitae (PDF)" data-zh="英文简历 CV (PDF)">Curriculum Vitae (PDF)</span>
+              </a>
+
+              <a href="assets/docs/Yaobin_Yang_CV_ZH.pdf" target="_blank" rel="noopener" class="btn btn-gold">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                <span data-en="Chinese CV (中文简历)" data-zh="中文简历 (PDF)">Chinese CV (中文简历)</span>
+              </a>
+
+              <a href="mailto:yangyaobin@berkeley.edu" class="btn btn-secondary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <span>yangyaobin@berkeley.edu</span>
+              </a>
+            </div>
+
+            <!-- Contact Info Strip -->
+            <div class="contact-strip">
+              <span class="contact-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>408 Davis Hall, UC Berkeley, CA 94720</span>
+              </span>
+              <span class="contact-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <a href="mailto:yang_yaobin@outlook.com">yang_yaobin@outlook.com</a>
+              </span>
+              <span class="contact-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <span>+1 (510) 426-2198</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 Cross-Cutting Methodological Pillars -->
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h4l3-9 4 18 3-9h6"/></svg>
+          </div>
+          <div class="pillar-title" data-en="Advanced Distributed Sensing" data-zh="先进分布式光纤与声学传感">Advanced Distributed Sensing</div>
+          <div class="pillar-desc" data-en="Rayleigh/BOTDA DFOS, DAS, miniature pore-pressure probes, and Cosserat rod 3D shape & tactile sensing." data-zh="瑞利/BOTDA光纤传感、分布式声学传感（DAS）、微型光纤孔隙水压探头及Cosserat三维形状与触觉传感。">
+            Rayleigh/BOTDA DFOS, DAS, miniature pore-pressure probes, and Cosserat rod 3D shape & tactile sensing.
+          </div>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          </div>
+          <div class="pillar-title" data-en="Field & Lab Experimentation" data-zh="全尺寸现场与实验室试验">Field & Lab Experimentation</div>
+          <div class="pillar-desc" data-en="Hayward Fault pipeline (~4 mm/yr precision), eccentrically loaded piles, geothermal boreholes, and 3D-printed concrete." data-zh="穿越海沃德活动断层输水管道监测（~4 mm/年精度）、偏心受荷桩基测试、地热钻孔及3D打印混凝土。">
+            Hayward Fault pipeline (~4 mm/yr precision), eccentrically loaded piles, geothermal boreholes, and 3D-printed concrete.
+          </div>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          </div>
+          <div class="pillar-title" data-en="Computational Geomechanics" data-zh="高性能计算地质力学">Computational Geomechanics</div>
+          <div class="pillar-desc" data-en="Matrix-free adaptive DG-FEM, phase-field fracture for unsaturated soil & embankment dams, dynamic Cosserat rods, THCM." data-zh="无矩阵自适应间断伽辽金有限元（DG-FEM）、非饱和土与土石坝相场断裂、动态Cosserat杆及THCM多场耦合。">
+            Matrix-free adaptive DG-FEM, phase-field fracture for unsaturated soil & embankment dams, dynamic Cosserat rods, THCM.
+          </div>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          </div>
+          <div class="pillar-title" data-en="Physics-Informed Inversion" data-zh="物理约束反演与数字孪生">Physics-Informed Inversion</div>
+          <div class="pillar-desc" data-en="PDE-constrained optimization (PDECO) for pile bearing capacity & soil-structure interaction; reduced-order geothermal twins." data-zh="偏微分方程约束优化（PDECO）反演桩基承载力与土-结构相互作用；实时地热安全降阶模拟。">
+            PDE-constrained optimization (PDECO) for pile bearing capacity & soil-structure interaction; reduced-order geothermal twins.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         Research Thrusts & Interactive Visual Gallery
+         ====================================================================== -->
+    <section id="research" class="section">
+      <div class="section-header">
+        <div class="section-title-group">
+          <span class="section-kicker" data-en="Sensing-to-Inference Frameworks" data-zh="传感到推断的一体化研究体系">Sensing-to-Inference Frameworks</span>
+          <h2 class="section-title" data-en="Core Research Thrusts" data-zh="核心研究方向">Core Research Thrusts</h2>
+        </div>
+        <p class="section-subtitle" data-en="Click any figure to inspect the full-resolution technical diagram." data-zh="点击任意插图可放大查看高清技术原图与详细图注。">
+          Click any figure to inspect the full-resolution technical diagram.
+        </p>
+      </div>
+
+      <div class="research-grid">
+        <!-- Thrust 1 -->
+        <article class="research-card">
+          <div class="research-img-container"
+               data-lightbox-src="assets/img/fieldwork.jpg"
+               data-title-en="Thrust 1: Sustainable Monitoring of Civil and Water Infrastructure"
+               data-title-zh="方向一：土木与水利基础设施的可持续监测"
+               data-caption-en="Field-scale monitoring of an operating HDPE water transmission pipeline crossing the active Hayward Fault (~4 mm/yr precision) and full-scale pile foundation deformation profiling via Cosserat rod kinematics (flexure, shear, twist, elongation) and PDE-constrained optimization."
+               data-caption-zh="穿越海沃德活动断层（Hayward Fault）的在役输水管道全尺寸现场监测（精度达 ~4 mm/年）及利用 Cosserat 杆运动学与偏微分方程约束优化（PDECO）重构的桩基与管线三维变形剖面。">
+            <img src="assets/img/fieldwork.jpg" alt="Hayward Fault pipeline and pile deformation monitoring via DFOS" loading="lazy" />
+            <span class="zoom-hint">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <span data-en="Zoom Figure" data-zh="放大查看">Zoom Figure</span>
+            </span>
+          </div>
+          <div class="research-body">
+            <span class="research-num">Thrust 01 · Lifeline & Foundation Geotechnics</span>
+            <h3 class="research-card-title" data-en="Sustainable Monitoring of Civil & Water Infrastructure" data-zh="土木与水利基础设施的可持续智能监测">
+              Sustainable Monitoring of Civil & Water Infrastructure
+            </h3>
+            <p class="research-card-desc"
+               data-en="Transforming passive buried pipelines and deep foundations into continuous distributed sensors. In a full-scale deployment on an operating water pipeline crossing the active Hayward Fault, I combined distributed strain/temperature sensing with Cosserat rod kinematics to resolve slow fault-driven ground deformation to ~4 mm/year precision. Paired with PDE-constrained optimization (PDECO), my framework infers pile bearing capacity, eccentric load response, and nonlinear soil–structure interaction directly from distributed strain."
+               data-zh="利用分布式光纤传感（DFOS）将被动埋地管线与深基础转化为高灵敏度的连续传感器。在穿越海沃德活动断层的输水管道现场部署中，结合分布式应变/温度传感与 Cosserat 杆重构模型，将断层蠕滑位移解析至约 4 mm/年精度；并结合偏微分方程约束优化（PDECO），由连续分布式应变直接反演桩基承载力、偏心荷载响应及非线性土-结构相互作用。">
+              Transforming passive buried pipelines and deep foundations into continuous distributed sensors. In a full-scale deployment on an operating water pipeline crossing the active Hayward Fault, I combined distributed strain/temperature sensing with Cosserat rod kinematics to resolve slow fault-driven ground deformation to ~4 mm/year precision. Paired with PDE-constrained optimization (PDECO), my framework infers pile bearing capacity, eccentric load response, and nonlinear soil–structure interaction directly from distributed strain.
+            </p>
+            <div class="research-tags">
+              <span class="tag-pill">DFOS / DAS</span>
+              <span class="tag-pill">Hayward Fault Pipeline</span>
+              <span class="tag-pill">PDE-Constrained Optimization</span>
+              <span class="tag-pill">Deep Foundations</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Thrust 2 -->
+        <article class="research-card">
+          <div class="research-img-container"
+               data-lightbox-src="assets/img/3DPC.jpg"
+               data-title-en="Thrust 2: Smart, Sustainable Construction through Additive Manufacturing"
+               data-title-zh="方向二：基于增材制造的智能、可持续建造"
+               data-caption-en="Print-integrated distributed fiber-optic sensing for 3D concrete printing: robotic extrusion embeds the optical fiber directly into fresh concrete layers (right), feeding a high-resolution DFOS interrogator (center) that maps 3D internal strain fields and detects micro-cracking prior to structural failure (left)."
+               data-caption-zh="面向混凝土3D打印的打印集成分布式光纤传感：机器人在挤出过程中将光纤同步嵌入混凝土层间（右），由分布式光纤解调系统（中）实时重构内部三维应变场并捕捉失效前微裂纹演化（左）。">
+            <img src="assets/img/3DPC.jpg" alt="Print-integrated fiber-optic sensing in 3D printed concrete" loading="lazy" />
+            <span class="zoom-hint">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <span data-en="Zoom Figure" data-zh="放大查看">Zoom Figure</span>
+            </span>
+          </div>
+          <div class="research-body">
+            <span class="research-num">Thrust 02 · Digital Fabrication & Structural Health</span>
+            <h3 class="research-card-title" data-en="Smart, Sustainable Construction via Additive Manufacturing" data-zh="基于增材制造的智能、低碳可验证建造">
+              Smart, Sustainable Construction via Additive Manufacturing
+            </h3>
+            <p class="research-card-desc"
+               data-en="3D-printed concrete reduces material waste and embodied carbon, yet exhibits brittle, anisotropic failure modes. I developed a print-integrated sensing framework that embeds optical fibers directly into the cementitious matrix during robotic extrusion. Acting as an embedded 'nervous system', the continuous fiber tracks internal strain evolution, pinpoints micro-crack initiation, and provides quantitative early warning in pre-failure states."
+               data-zh="3D打印混凝土能够显著降低材料浪费与隐含碳排放，但其层间脆性与各向异性失效制约了工程可靠性。我研发了打印集成式光纤传感框架，在机器人挤出过程中将传感光纤直接嵌入混凝土基体。这一连续的“结构神经系统”可实时追踪内部应变分布、精确定位微裂纹萌生，并在结构失效前提供早期预警。">
+              3D-printed concrete reduces material waste and embodied carbon, yet exhibits brittle, anisotropic failure modes. I developed a print-integrated sensing framework that embeds optical fibers directly into the cementitious matrix during robotic extrusion. Acting as an embedded 'nervous system', the continuous fiber tracks internal strain evolution, pinpoints micro-crack initiation, and provides quantitative early warning in pre-failure states.
+            </p>
+            <div class="research-tags">
+              <span class="tag-pill">3D Printed Concrete</span>
+              <span class="tag-pill">Robotic Extrusion</span>
+              <span class="tag-pill">Embedded Nervous System</span>
+              <span class="tag-pill">Fracture Early Warning</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Thrust 3 -->
+        <article class="research-card">
+          <div class="research-img-container"
+               data-lightbox-src="assets/img/soilcrack.jpg"
+               data-title-en="Thrust 3: High-Performance Computational Geomechanics for Infrastructure Resilience"
+               data-title-zh="方向三：面向基础设施韧性的高性能计算地质力学"
+               data-caption-en="Matrix-free Discontinuous Galerkin Finite Element Method (DG-FEM) multiphysics framework for unsaturated soils: coupling effective stress theory with hyperbolic fluid infiltration, matric suction, saturation evolution, and phase-field desiccation/embankment crack propagation."
+               data-caption-zh="非饱和土的无矩阵间断伽辽金有限元（DG-FEM）多物理场耦合框架：将有效应力原理与流体入渗、基质吸力、饱和度演化及相场干缩/土石坝裂纹扩展模型相结合。">
+            <img src="assets/img/soilcrack.jpg" alt="DG-FEM multiphysics and phase-field fracture modeling of unsaturated soil" loading="lazy" />
+            <span class="zoom-hint">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <span data-en="Zoom Figure" data-zh="放大查看">Zoom Figure</span>
+            </span>
+          </div>
+          <div class="research-body">
+            <span class="research-num">Thrust 03 · Multiphysics & Phase-Field Fracture</span>
+            <h3 class="research-card-title" data-en="High-Performance Computational Mechanics for Resilience" data-zh="面向基础设施韧性的高性能计算力学">
+              High-Performance Computational Mechanics for Resilience
+            </h3>
+            <p class="research-card-desc"
+               data-en="I architected a computationally efficient, matrix-free adaptive Discontinuous Galerkin Finite Element Method (DG-FEM) framework coupled with phase-field fracture for unsaturated soils and earth structures. It resolves matric suction, moisture infiltration, desiccation cracking, embankment dam seismic/cracking safety (with USACE & FEMA), and coupled thermal-hydro-chemo-mechanical (THCM) behavior in marine gas hydrate reservoirs."
+               data-zh="构建了计算高效、无矩阵（Matrix-Free）自适应间断伽辽金有限元（DG-FEM）框架，并耦合相场断裂力学模型。该体系能够高精度解析非饱和土基质吸力、水分入渗、干缩开裂、土石坝裂缝扩展与地震安全评估（美国陆军工程兵团 USACE 与 FEMA 合作项目），以及海洋天然气水合物储层的热-水-化-力（THCM）多场耦合行为。">
+              I architected a computationally efficient, matrix-free adaptive Discontinuous Galerkin Finite Element Method (DG-FEM) framework coupled with phase-field fracture for unsaturated soils and earth structures. It resolves matric suction, moisture infiltration, desiccation cracking, embankment dam seismic/cracking safety (with USACE & FEMA), and coupled thermal-hydro-chemo-mechanical (THCM) behavior in marine gas hydrate reservoirs.
+            </p>
+            <div class="research-tags">
+              <span class="tag-pill">Matrix-Free DG-FEM</span>
+              <span class="tag-pill">Phase-Field Fracture</span>
+              <span class="tag-pill">Unsaturated Poromechanics</span>
+              <span class="tag-pill">Coupled THCM</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Thrust 4 -->
+        <article class="research-card">
+          <div class="research-img-container"
+               data-lightbox-src="assets/img/softrobo.jpg"
+               data-title-en="Thrust 4: Distributed Shape Sensing, Soft Robotics & Slender Continuum Dynamics"
+               data-title-zh="方向四：分布式形状/触觉传感与细长连续体非线性动力学"
+               data-caption-en="Cosserat rod-based 3D shape reconstruction and matrix-free DG dynamic simulation: capturing coiling/drilling mechanics of bioinspired self-burrowing seedpods (left), real-time ODiSI-6 optical strain spectrograms (center), and experimental fiber-optic shape & tactile sensing hardware (right)."
+               data-caption-zh="基于 Cosserat 杆理论的三维形状重构与无矩阵间断伽辽金动态仿真：刻画仿生自钻埋种荚的盘绕钻土力学（左）、ODiSI-6 实时分布式光纤应变谱（中）及光纤形状与触觉传感实验系统（右）。">
+            <img src="assets/img/softrobo.jpg" alt="Cosserat rod shape sensing and bioinspired seedpod mechanics" loading="lazy" />
+            <span class="zoom-hint">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <span data-en="Zoom Figure" data-zh="放大查看">Zoom Figure</span>
+            </span>
+          </div>
+          <div class="research-body">
+            <span class="research-num">Thrust 04 · Cosserat Rods & Bioinspired Systems</span>
+            <h3 class="research-card-title" data-en="Distributed Shape Sensing & Advanced Numerical Methods" data-zh="分布式形状/触觉传感与细长体动力学">
+              Distributed Shape Sensing & Advanced Numerical Methods
+            </h3>
+            <p class="research-card-desc"
+               data-en="Coupling micro-scale optical fibers with Cosserat rod theory and stochastic error analysis enables real-time 3D shape reconstruction with rigorous uncertainty bounds. To simulate the nonlinear dynamics of slender continuum systems, I developed a matrix-free Discontinuous Galerkin solver for dynamic Cosserat rods, capturing large deformations, instabilities, and contact across bioinspired self-burrowing seedpods and offshore mooring cables monitored with Distributed Acoustic Sensing."
+               data-zh="将微尺度光纤与 Cosserat 杆理论及随机误差分析相结合，实现具有严格不确定性界的实时三维形状重构。我进一步提出了面向动态 Cosserat 杆的无矩阵间断伽辽金算法，高精度刻画细长结构的大变形、失稳与接触，成功应用于仿生自钻埋种荚入土力学与海洋系泊缆流致振动分析。">
+              Coupling micro-scale optical fibers with Cosserat rod theory and stochastic error analysis enables real-time 3D shape reconstruction with rigorous uncertainty bounds. To simulate the nonlinear dynamics of slender continuum systems, I developed a matrix-free Discontinuous Galerkin solver for dynamic Cosserat rods, capturing large deformations, instabilities, and contact across bioinspired self-burrowing seedpods and offshore mooring cables monitored with Distributed Acoustic Sensing.
+            </p>
+            <div class="research-tags">
+              <span class="tag-pill">Cosserat Rod Theory</span>
+              <span class="tag-pill">Dynamic DG Solver</span>
+              <span class="tag-pill">Bioinspired Burrowing</span>
+              <span class="tag-pill">Stochastic Uncertainty</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         Publications & Patents Section
+         ====================================================================== -->
+    <section id="publications" class="section">
+      <div class="section-header">
+        <div class="section-title-group">
+          <span class="section-kicker" data-en="Peer-Reviewed Scholarship & Intellectual Property" data-zh="同行评审学术成果与专利">Peer-Reviewed Scholarship & Intellectual Property</span>
+          <h2 class="section-title" data-en="Publications & Patents" data-zh="代表性论文与专利">Publications & Patents</h2>
+        </div>
+        <div class="section-subtitle" data-en="* denotes corresponding or co-first authorship" data-zh="* 表示通讯作者或共同第一作者">
+          * denotes corresponding or co-first authorship
+        </div>
+      </div>
+
+      <!-- Filter Tabs & Search Input -->
+      <div class="pub-controls">
+        <div class="pub-tabs">
+          <button type="button" class="pub-tab active" data-filter="all" data-en="All (17)" data-zh="全部 (17)">All (17)</button>
+          <button type="button" class="pub-tab" data-filter="journal" data-en="Published Journals (4)" data-zh="已发表期刊 (4)">Published Journals (4)</button>
+          <button type="button" class="pub-tab" data-filter="underreview" data-en="Under Review & Preprints (7)" data-zh="在审与预印本 (7)">Under Review & Preprints (7)</button>
+          <button type="button" class="pub-tab" data-filter="conference" data-en="Conferences (4)" data-zh="会议论文 (4)">Conferences (4)</button>
+          <button type="button" class="pub-tab" data-filter="patent" data-en="Patent & Thesis (2)" data-zh="专利与学位论文 (2)">Patent & Thesis (2)</button>
+        </div>
+
+        <div class="pub-search-wrap">
+          <svg class="pub-search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" id="pub-search" class="pub-search-input"
+                 placeholder="Filter by keyword, journal, or co-author..."
+                 data-en="Filter by keyword, journal, or co-author..."
+                 data-zh="按关键词、期刊或合作者筛选..." />
+        </div>
+      </div>
+
+      <div class="pub-list" id="pub-list">
+
+        <!-- 1. Computers and Geotechnics 2026 -->
+        <article class="pub-item" data-category="journal">
+          <div class="pub-badge-col">
+            <span class="pub-year-badge">2026</span>
+            <span class="pub-type-badge journal" data-en="Journal" data-zh="期刊论文">Journal</span>
+          </div>
+          <div class="pub-content">
+            <h3 class="pub-title">Inference of pile capacity from distributed strain sensing via PDE-constrained optimization</h3>
+            <p class="pub-authors"><span class="me">Yaobin Yang</span>, Gyu-Beom Shin*, Loizos Pelecanos, Chien-Chih Wang, Linqing Luo, and Kenichi Soga</p>
+            <p class="pub-venue"><strong>Computers and Geotechnics</strong>, Vol. 196, 108131 (2026)</p>
+            <div class="pub-links">
+              <a href="https://doi.org/10.1016/j.compgeo.2026.108131" target="_blank" rel="noopener" class="pub-btn">DOI: 10.1016/j.compgeo.2026.108131</a>
+              <button type="button" class="pub-btn" data-bibtex="YANG2026108131">BibTeX</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. ASCE JGGE 2026 -->
+        <article class="pub-item" data-category="journal">
+          <div class="pub-badge-col">
+            <span class="pub-year-badge">2026</span>
+            <span class="pub-type-badge journal" data-en="Journal" data-zh="期刊论文">Journal</span>
+          </div>
+          <div class="pub-content">
+            <h3 class="pub-title">Distributed Fiber Optic Sensing for Monitoring Piles under Eccentric Load</h3>
+            <p class="pub-authors">Gyu-Beom Shin, <span class="me">Yaobin Yang*</span>, Loizos Pelecanos, Federica Angela Mevoli, Andrew Yeskoo, Tom Shantz, and Kenichi Soga</p>
+            <p class="pub-venue"><strong>Journal of Geotechnical and Geoenvironmental Engineering (ASCE)</strong> (2026)</p>
+            <div class="pub-links">
+              <a href="https://doi.org/10.1061/JGGEFK/GTENG-14998" target="_blank" rel="noopener" class="pub-btn">DOI: 10.1061/JGGEFK/GTENG-14998</a>
+              <button type="button" class="pub-btn" data-bibtex="Shin_EccentricLoad">BibTeX</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. MSSP 2025 -->
+        <article class="pub-item" data-category="journal">
+          <div class="pub-badge-col">
+            <span class="pub-year-badge">2025</span>
+            <span class="pub-type-badge journal" data-en="Journal" data-zh="期刊论文">Journal</span>
+          </div>
+          <div class="pub-content">
+            <h3 class="pub-title">Cosserat rod-based modeling and stochastic analysis for distributed fiber optics shape-sensing</h3>
+            <p class="pub-authors"><span class="me">Yaobin Yang*</span>, Linqing Luo, Maksymilian Jasiak, Chien-Chih Wang, Shih-Hung Chiu, and Kenichi Soga</p>
+            <p class="pub-venue"><strong>Mechanical Systems and Signal Processing</strong>, Vol. 241, 113457 (2025)</p>
+            <div class="pub-links">
+              <a href="https://doi.org/10.1016/j.ymssp.2025.113457" target="_blank" rel="noopener" class="pub-btn">DOI: 10.1016/j.ymssp.2025.113457</a>
+              <button type="button" class="pub-btn" data-bibtex="yang2025cosserat">BibTeX</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. Energy 2023 -->
+        <article class="pub-item" data-category="journal">
+          <div class="pub-badge-col">
+            <span class="pub-year-badge">2023</span>
+            <span class="pub-type-badge journal" data-en="Journal" data-zh="期刊论文">Journal</span>
+          </div>
+          <div class="pub-content">
+            <h3 class="pub-title">Numerical analysis of coupled thermal-hydro-chemo-mechanical (THCM) behavior to joint production of marine gas hydrate and shallow gas</h3>
+            <p class="pub-authors">Fanbao Cheng, Xiang Sun*, Yanghui Li*, Xin Ju, <span class="me">Yaobin Yang</span>, Xuanji Liu, Weiguo Liu, Mingjun Yang, and Yongchen Song</p>
+            <p class="pub-venue"><strong>Energy</strong>, Vol. 281, 128224 (2023)</p>
+            <div class="pub-links">
+              <a href="https://doi.org/10.1016/j.energy.2023.128224" target="_blank" rel="noopener" class="pub-btn">DOI: 10.1016/j.energy.2023.128224</a>
+              <button type="button" class="pub-btn" data-bibtex="cheng2023numerical">BibTeX</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. CMAME Matrix-Free DG Cosserat Rod (Under Review) -->
+        <article class="pub-item" data-category="underreview">
+          <div class="pub-badge-col">
+            <span class="pub-year-badge">2026</span>
+            <span class="pub-type-badge underreview" data-en="Under Review" data-zh="在审论文">Under Review</span>
+          </div>
+          <div class="pub-content">
+            <h3 class="pub-title">A Matrix-Free Discontinuous Galerkin Method for Dynamic Cosserat Rod Simulation</h3>
+            <p class="pub-authors"><span class="me">Yaobin Yang*</span>, Teng Zhang, Krishna Kumar, Kenichi Soga, Claudio Matias Perez, Linqing Luo, and Gyu-Beom Shin</p>
+            <p class="pub-venue">Under Review at <strong>Computer Methods in Applied Mechanics and Engineering (CMAME)</strong></p>
+            <div class="pub-links">
+              <a href="https://ssrn.com/abstract=7417101" target="_blank" rel="noopener" class="pub-btn">SSRN Preprint: 7417101</a>
+              <button type="button" class="pub-btn" data-bibtex="yang2026matrixfree">BibTeX</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. GRL Water Pipelines Fault Movement (Under Review) -->
+        <article class="pub-item" data-category="underreview">
+          <div class="pub-badge-col">
+            <span class="pub-year-badge">2026</span>
+            <span class="pub-type-badge underreview" data-en="Under Review" data-zh="在审论文">Under Review</span>
+          </div>
+          <div class="pub-content">
+            <h3 class="pub-title">Transforming Critical Water Pipelines into Seismic Fault Movement Sensors</h3>
+            <p class="pub-authors">Maksymilian Jasiak, <span class="me">Yaobin Yang*</span>, Chien-Chih Wang, Shih-Hung Chiu, Linqing Luo, Peter Hubbard, Yuankun Xu, Youqi Zhang, Roland Burgmann, and Kenichi Soga</p>
+            <p class="pub-venue">Under Review at <strong>Geophysical Research Letters (GRL)</strong></p>
+            <div class="pub-links">
+              <button type="button" class="pub-btn" data-bibtex="TransformingCriticalWaterPipelines">BibTeX</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 7. ASCE JGGE Thermal Integrity Profiling (Under Review) -->
+        <article class="pub-item" data-category="underreview">
+          <div class="pub-badge-col">
+            <span class="pub-year-badge">2026</span>
+            <span class="pub-type-badge underreview" data-en="Under Review" data-zh="在审论文">Under Review</span>
+          </div>
+          <div class="pub-content">
+            <h3 class="pub-title">A Semi-Analytical Framework for Thermal Integrity Profiling of Cast-in-situ Piles Using Temperature Response Functions</h3>
+            <p class="pub-authors">Gyu-Beom Shin, <span class="me">Yaobin Yang*</span>, Loizos Pelecanos, Federica Angela Mevoli, Echo Ouyang, and Kenichi Soga</p>
+            <p class="pub-venue">Under Review at <strong>Journal of Geotechnical and Geoenvironmental Engineering (ASCE)</strong></p>
+            <div class="pub-links">
+              <button type="button" class="pub-btn" data-bibtex="Shin_Asemi">BibTeX</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 8. Additive Manufacturing 3DPC (Under Review) -->
+        <article class="pub-item" data-category="underreview">
+          <div class="pub-badge-col">
+            <span class="pub-year-badge">2026</span>
+            <span class="pub-type-badge underreview" data-en="Under Review" data-zh="在审论文">Under Review</span>
+          </div>
+          <div class="pub-content">
+            <h3 class="pub-title">Embedded Fiber-optic Sensing in Printed Concrete for Structural Failure and Fracture Monitoring</h3>
+            <p class="pub-authors">Jianhao Gao, Yujun Niu, <span class="me">Yaobin Yang</span>, Linqing Luo, Kenichi Soga, and Chaofeng Wang*</p>
+            <p class="pub-venue">Under Review at <strong>Additive Manufacturing</strong></p>
+            <div class="pub-links">
+              <button type="button" class="pub-btn" data-bibtex="gao2026embeddedfiberoptic">BibTeX</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 9. Nature Ecology & Evolution Hygrochastic Seedpods (Under Review) -->
+        <article class="pub-item" data-category="underreview">
+          <div class="pub-badge-col">
+            <span class="pub-year-badge">2026</span>
+            <span class="pub-type-badge underreview" data-en="Under Review" data-zh="在审论文">Under Review</span>
+          </div>
+          <div class="pub-content">
+            <h3 class="pub-title">Hygrochastic Seedpods: Engineering Microclimates for Ecological Restoration</h3>
+            <p class="pub-authors">Semina Yi, Yaoye Hong, Florentin C. Jaeger, Marco Freschi, <span class="me">Yaobin Yang</span>, Ziyun Zhang, Hajun Lee, Kenichi Soga, Ehren Moler, Teng Zhang, Taryn L. Bauerle*, Shu Yang*, and Lining Yao*</p>
+            <p class="pub-venue">Under Review at <strong>Nature Ecology &amp; Evolution</strong></p>
+            <div class="pub-links">
+              <button type="button" class="pub-btn" data-bibtex="Yi2026Hygrochastic">BibTeX</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 10. Journal of Ocean Engineering and Science (Under Review) -->
+        <article class="pub-item" data-category="underreview">
+          <div class="pub-badge-col">
+            <span class="pub-year-badge">2026</span>
+            <span class="pub-type-badge underreview" data-en="Under Review" data-zh="在审论文">Under Review</span>
+          </div>
+          <div class="pub-content">
+            <h3 class="pub-title">Flow-Induced Vibration Suppression for Distributed Fiber Optic Sensing Cables in Turbulent Marine Environments</h3>
+            <p class="pub-authors">Linqing Luo*, <span class="me">Yaobin Yang</span>, Kenichi Soga, John Ryan, and Yuxin Wu</p>
+            <p class="pub-venue">Under Review at <strong>Journal of Ocean Engineering and Science</strong></p>
+            <div class="pub-links">
+              <button type="button" class="pub-btn" data-bibtex="luo2026flowinduced">BibTeX</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 11. Transportation Research Part C (Under Review) -->
+        <article class="pub-item" data-category="underreview">
+          <div class="pub-badge-col">
+            <span class="pub-year-badge">2026</span>
+            <span class="pub-type-badge underreview" data-en="Under Review" data-zh="在审论文">Under Review</span>
+          </div>
+          <div class="pub-content">
+            <h3 class="pub-title">Optimal Control Modeling for Switched Systems in Traffic Evacuation</h3>
+            <p class="pub-authors">Yanglan Wang, Maria Laura Delle Monache, <span class="me">Yaobin Yang</span>, and Kenichi Soga</p>
+            <p class="pub-venue">Under Review at <strong>Transportation Research Part C: Emerging Technologies</strong></p>
+            <div class="pub-links">
+              <a href="https://doi.org/10.2139/ssrn.6727554" target="_blank" rel="noopener" class="pub-btn">DOI: 10.2139/ssrn.6727554</a>
+              <button type="button" class="pub-btn" data-bibtex="Wang2026OptimalControl">BibTeX</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 12. ASCE Conference 2027 Pore Pressure Probe -->
+        <article class="pub-item" data-category="conference">
+          <div class="pub-badge-col">
+            <span class="pub-year-badge">2027</span>
+            <span class="pub-type-badge conference" data-en="Conference" data-zh="会议论文">Conference</span>
+          </div>
+          <div class="pub-content">
+            <h3 class="pub-title">Fiber-optic Miniature Pore Pressure Probe — Design, Fabrication and Application</h3>
+            <p class="pub-authors"><span class="me">Yaobin Yang*</span>, Linqing Luo, Kenichi Soga, and Xiang Sun*</p>
+            <p class="pub-venue"><strong>ASCE Conference 2027</strong> (Accepted Abstract, ID: ASCE2027-288)</p>
+            <div class="pub-links">
+              <button type="button" class="pub-btn" data-bibtex="yang2027porepressure">BibTeX</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 13. Pipelines 2024 -->
+        <article class="pub-item" data-category="conference">
+          <div class="pub-badge-col">
+            <span class="pub-year-badge">2024</span>
+            <span class="pub-type-badge conference" data-en="Conference" data-zh="会议论文">Conference</span>
+          </div>
+          <div class="pub-content">
+            <h3 class="pub-title">Design and Installation of Distributed Fiber Optic Sensing Technology to Monitor HDPE Pipelines at an Earthquake Fault Crossing</h3>
+            <p class="pub-authors">Krista Araica, Gus Cicala, Marshall P. McLeod, Kenichi Soga, Maksymilian Jasiak, Peter Hubbard, Chien-Chih Wang, <span class="me">Yaobin Yang</span>, Linqing Luo, Andrew Yeskoo, et al.</p>
+            <p class="pub-venue"><strong>ASCE Pipelines 2024</strong>, pp. 561–571 (2024)</p>
+            <div class="pub-links">
+              <button type="button" class="pub-btn" data-bibtex="araica2024design">BibTeX</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 14. Geo-Congress 2024 -->
+        <article class="pub-item" data-category="conference">
+          <div class="pub-badge-col">
+            <span class="pub-year-badge">2024</span>
+            <span class="pub-type-badge conference" data-en="Conference" data-zh="会议论文">Conference</span>
+          </div>
+          <div class="pub-content">
+            <h3 class="pub-title">Thermal Response Test of Geothermal Boreholes Using Distributed Fiber Optic Sensing</h3>
+            <p class="pub-authors">Sumeet K. Sinha*, Jiahui Yang, <span class="me">Yaobin Yang</span>, Asha Nigh, and Kenichi Soga</p>
+            <p class="pub-venue"><strong>ASCE Geo-Congress 2024</strong>, pp. 493–503 (2024)</p>
+            <div class="pub-links">
+              <button type="button" class="pub-btn" data-bibtex="sinha2024thermal">BibTeX</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 15. AGU 2022 -->
+        <article class="pub-item" data-category="conference">
+          <div class="pub-badge-col">
+            <span class="pub-year-badge">2022</span>
+            <span class="pub-type-badge conference" data-en="Conference" data-zh="会议摘要">Conference</span>
+          </div>
+          <div class="pub-content">
+            <h3 class="pub-title">Intermediate-scale testing of a spatially distributed sensing technology for monitoring greenhouse gas migration through vadose zone to the atmosphere</h3>
+            <p class="pub-authors">Tissa H. Illangasekare*, Ana Maria Ilie, <span class="me">Yaobin Yang</span>, Kenichi Soga, W. Richard Whalley, and Andrew Trautz</p>
+            <p class="pub-venue"><strong>AGU Fall Meeting Abstracts</strong>, Vol. 2022, H45J-1511 (2022)</p>
+            <div class="pub-links">
+              <button type="button" class="pub-btn" data-bibtex="illangasekare2022intermediate">BibTeX</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 16. US Patent Application 2025 -->
+        <article class="pub-item" data-category="patent">
+          <div class="pub-badge-col">
+            <span class="pub-year-badge">2025</span>
+            <span class="pub-type-badge patent" data-en="U.S. Patent" data-zh="美国专利">U.S. Patent</span>
+          </div>
+          <div class="pub-content">
+            <h3 class="pub-title">Flying Driller: Gravity- and Inertia-Driven Penetration with Seed-inspired Flight Behavior for Enhanced Aerial Seeding</h3>
+            <p class="pub-authors">U.S. Provisional Patent Application No. <strong>63/877,853</strong> (Filed September 2025)</p>
+            <div class="pub-links">
+              <button type="button" class="pub-btn" data-bibtex="flyingdriller2025">BibTeX</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 17. Ph.D. Dissertation 2024 -->
+        <article class="pub-item" data-category="patent">
+          <div class="pub-badge-col">
+            <span class="pub-year-badge">2024</span>
+            <span class="pub-type-badge thesis" data-en="Ph.D. Thesis" data-zh="博士论文">Ph.D. Thesis</span>
+          </div>
+          <div class="pub-content">
+            <h3 class="pub-title">Discontinuous Galerkin Finite Element Analysis and Experimental Sensors Innovations for Unsaturated Soil</h3>
+            <p class="pub-authors"><span class="me">Yaobin Yang</span> (Advisor: Prof. Kenichi Soga)</p>
+            <p class="pub-venue"><strong>Ph.D. Dissertation</strong>, University of California, Berkeley (December 2024)</p>
+            <div class="pub-links">
+              <button type="button" class="pub-btn" data-bibtex="yang2024discontinuous">BibTeX</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         Sponsored Research Projects Section
+         ====================================================================== -->
+    <section id="projects" class="section">
+      <div class="section-header">
+        <div class="section-title-group">
+          <span class="section-kicker" data-en="Federal & State Sponsored Research" data-zh="国家级与州级重点科研项目">Federal & State Sponsored Research</span>
+          <h2 class="section-title" data-en="Sponsored Research Projects" data-zh="参与的重大科研项目">Sponsored Research Projects</h2>
+        </div>
+        <p class="section-subtitle" data-en="Multi-institutional convergence research across NSF, DOE, USACE/FEMA, CEC, and UKRI." data-zh="涵盖 NSF、DOE、USACE/FEMA、CEC 与 UKRI 的跨学科多机构联合项目。">
+          Multi-institutional convergence research across NSF, DOE, USACE/FEMA, CEC, and UKRI.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1: NSF GCR -->
+        <div class="project-card">
+          <div class="project-top">
+            <span class="agency-badge">NSF GCR · Award #2428641</span>
+            <span class="project-period" data-en="2024 – Present" data-zh="2024年 – 至今">2024 – Present</span>
+          </div>
+          <h3 class="project-title" data-en="Rooted in Nature: Bioinspired Design of Sustainable Seeding Methods to Improve Forest Regeneration" data-zh="NSF GCR“根植自然”：仿生可持续播种方法设计以促进森林再生">
+            Rooted in Nature: Bioinspired Design of Sustainable Seeding Methods to Improve Forest Regeneration
+          </h3>
+          <div class="project-partners" data-en="University of Pennsylvania · UC Berkeley · Syracuse University" data-zh="宾夕法尼亚大学 · 加州大学伯克利分校 · 雪城大学">
+            University of Pennsylvania · UC Berkeley · Syracuse University
+          </div>
+          <p class="project-role"
+             data-en="<strong>Role:</strong> Numerical simulation of soil mechanics and multiphase poromechanics; sensing system design and dynamic Cosserat rod numerical simulation of bioinspired self-burrowing soft actuators."
+             data-zh="<strong>核心职责：</strong>土壤力学与多相多孔介质力学数值模拟；仿生自钻埋软体驱动器的分布式传感设计与动态 Cosserat 杆数值仿真。">
+            <strong>Role:</strong> Numerical simulation of soil mechanics and multiphase poromechanics; sensing system design and dynamic Cosserat rod numerical simulation of bioinspired self-burrowing soft actuators.
+          </p>
+        </div>
+
+        <!-- Project 2: USACE / FEMA -->
+        <div class="project-card">
+          <div class="project-top">
+            <span class="agency-badge">USACE &amp; FEMA · DSPC-T</span>
+            <span class="project-period" data-en="2025 – Present" data-zh="2025年 – 至今">2025 – Present</span>
+          </div>
+          <h3 class="project-title" data-en="Embankment Dam Safety: Cracking and Seismic Limitations" data-zh="USACE / FEMA：土石坝安全——裂缝扩展与抗震评估">
+            Embankment Dam Safety: Cracking and Seismic Limitations
+          </h3>
+          <div class="project-partners" data-en="U.S. Army Corps of Engineers (USACE Dam Safety Production Center, DSPC-T) · FEMA · UC Berkeley" data-zh="美国陆军工程兵团坝安全生产中心 (USACE DSPC-T) · 联邦紧急事务管理局 (FEMA) · 加州大学伯克利分校">
+            U.S. Army Corps of Engineers (USACE Dam Safety Production Center, DSPC-T) · FEMA · UC Berkeley
+          </div>
+          <p class="project-role"
+             data-en="<strong>Role:</strong> Phase-field modeling of crack initiation and propagation in embankment soils; technical review and coordination on levee safety protocols, seismic risk, and embankment cracking assessment."
+             data-zh="<strong>核心职责：</strong>土石坝与堤防土体裂缝萌生及扩展的相场断裂建模研究；地震风险与堤防安全规程的技术审查与协调。">
+            <strong>Role:</strong> Phase-field modeling of crack initiation and propagation in embankment soils; technical review and coordination on levee safety protocols, seismic risk, and embankment cracking assessment.
+          </p>
+        </div>
+
+        <!-- Project 3: DOE GTO -->
+        <div class="project-card">
+          <div class="project-top">
+            <span class="agency-badge">U.S. DOE GTO · GeoSecure-RTS</span>
+            <span class="project-period" data-en="2026 – Present" data-zh="2026年 – 至今">2026 – Present</span>
+          </div>
+          <h3 class="project-title" data-en="GeoSecure-RTS: Geothermal Security with Real-Time Simulation" data-zh="DOE GTO：GeoSecure-RTS——基于实时仿真的地热安全系统">
+            GeoSecure-RTS: Geothermal Security with Real-Time Simulation
+          </h3>
+          <div class="project-partners" data-en="U.S. Department of Energy (DOE), Office of Geothermal Technologies (GTO)" data-zh="美国能源部（DOE）地热技术办公室（GTO）">
+            U.S. Department of Energy (DOE), Office of Geothermal Technologies (GTO)
+          </div>
+          <p class="project-role"
+             data-en="<strong>Role:</strong> High-fidelity geothermal reservoir model development, calibration, and parametric studies; model-order reduction, adaptive meshing, and parallel efficiency optimization."
+             data-zh="<strong>核心职责：</strong>高保真地热储层多物理场模型研发、标定与参数化研究；模型降阶、自适应网格加密与并行计算效率优化。">
+            <strong>Role:</strong> High-fidelity geothermal reservoir model development, calibration, and parametric studies; model-order reduction, adaptive meshing, and parallel efficiency optimization.
+          </p>
+        </div>
+
+        <!-- Project 4: CEC Floating Offshore Wind -->
+        <div class="project-card">
+          <div class="project-top">
+            <span class="agency-badge">CEC · Award #CEC-EPC-23-002</span>
+            <span class="project-period" data-en="2023 – Present" data-zh="2023年 – 至今">2023 – Present</span>
+          </div>
+          <h3 class="project-title" data-en="Integrated Monitoring of Cetacean and Ocean Environmental Impacts from Floating Offshore Wind Development" data-zh="CEC：漂浮式海上风电对太平洋沿岸鲸类及海洋环境影响的综合监测">
+            Integrated Monitoring of Cetacean and Ocean Environmental Impacts from Floating Offshore Wind Development
+          </h3>
+          <div class="project-partners" data-en="Lawrence Berkeley National Lab · UC Berkeley · MBARI · Optasense" data-zh="劳伦斯伯克利国家实验室 (LBNL) · 加州大学伯克利分校 · 蒙特雷湾水族馆研究所 (MBARI) · Optasense">
+            Lawrence Berkeley National Lab · UC Berkeley · MBARI · Optasense
+          </div>
+          <p class="project-role"
+             data-en="<strong>Role:</strong> High-fidelity numerical simulation of offshore mooring lines and underwater rope structures; development of efficient solvers for acoustic wave propagation under realistic oceanographic conditions."
+             data-zh="<strong>核心职责：</strong>海上系泊缆与水下绳索结构的高精度非线性动力学数值模拟；实际海洋环境条件下声波传播的高效数值求解器研发。">
+            <strong>Role:</strong> High-fidelity numerical simulation of offshore mooring lines and underwater rope structures; development of efficient solvers for acoustic wave propagation under realistic oceanographic conditions.
+          </p>
+        </div>
+
+        <!-- Project 5: NSF-UKRI SitS -->
+        <div class="project-card full-width">
+          <div class="project-top">
+            <span class="agency-badge">NSF–UKRI Signals in the Soil · Award #1935551</span>
+            <span class="project-period" data-en="2019 – 2024" data-zh="2019年 – 2024年">2019 – 2024</span>
+          </div>
+          <h3 class="project-title" data-en="Dynamic Coupling of Soil Structure and Gas Fluxes Measured with Distributed Sensor Systems: Implications for Carbon Modeling" data-zh="NSF–UKRI“土壤信号（SitS）”：利用分布式传感器系统测量土壤结构与气体通量的动态耦合">
+            Dynamic Coupling of Soil Structure and Gas Fluxes Measured with Distributed Sensor Systems: Implications for Carbon Modeling
+          </h3>
+          <div class="project-partners" data-en="UC Berkeley · Colorado School of Mines · Rothamsted Research (UK)" data-zh="加州大学伯克利分校 · 科罗拉多矿业学院 · 英国洛桑研究所 (Rothamsted Research)">
+            UC Berkeley · Colorado School of Mines · Rothamsted Research (UK)
+          </div>
+          <p class="project-role"
+             data-en="<strong>Role:</strong> Development of spatially distributed fiber-optic sensor systems; intermediate-scale soil mesocosm and field experimentation; spectrum-based BOTDA signal processing for soil desiccation crack localization and vadose-zone greenhouse gas flux monitoring."
+             data-zh="<strong>核心职责：</strong>空间分布式光纤传感器系统研发；中型土柱（Mesocosm）与野外试验；基于频谱分析的 BOTDA 信号处理方法研发，用于非饱和土干缩裂纹定位及包气带温室气体通量监测。">
+            <strong>Role:</strong> Development of spatially distributed fiber-optic sensor systems; intermediate-scale soil mesocosm and field experimentation; spectrum-based BOTDA signal processing for soil desiccation crack localization and vadose-zone greenhouse gas flux monitoring.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         Education & Academic Appointments Section
+         ====================================================================== -->
+    <section id="experience" class="section">
+      <div class="section-header">
+        <div class="section-title-group">
+          <span class="section-kicker" data-en="Academic Background & Appointments" data-zh="学术背景与工作履历">Academic Background & Appointments</span>
+          <h2 class="section-title" data-en="Education & Experience" data-zh="教育背景与工作经历">Education & Experience</h2>
+        </div>
+      </div>
+
+      <div class="two-col-layout">
+        <!-- Education Column -->
+        <div class="panel-card">
+          <h3 class="panel-heading">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            <span data-en="Education" data-zh="教育背景">Education</span>
+          </h3>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-date">09/2020 – 12/2024</div>
+              <div class="timeline-role" data-en="Ph.D. in Civil Engineering" data-zh="土木工程 哲学博士 (Ph.D.)">Ph.D. in Civil Engineering</div>
+              <div class="timeline-inst" data-en="University of California, Berkeley, USA" data-zh="美国加州大学伯克利分校 (UC Berkeley)">University of California, Berkeley, USA</div>
+              <div class="timeline-details"
+                   data-en="<strong>Dissertation:</strong> <em>Discontinuous Galerkin Finite Element Analysis and Experimental Sensors Innovations for Unsaturated Soil</em><br><strong>Minors:</strong> Structural Engineering, Applied Mathematics<br><strong>Advisor:</strong> Prof. Kenichi Soga"
+                   data-zh="<strong>博士论文：</strong>《非饱和土的间断伽辽金有限元分析与实验传感器创新》<br><strong>辅修博士学位：</strong>结构工程、应用数学<br><strong>导师：</strong>Kenichi Soga 教授">
+                <strong>Dissertation:</strong> <em>Discontinuous Galerkin Finite Element Analysis and Experimental Sensors Innovations for Unsaturated Soil</em><br>
+                <strong>Minors:</strong> Structural Engineering, Applied Mathematics<br>
+                <strong>Advisor:</strong> Prof. Kenichi Soga
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">09/2019 – 09/2020</div>
+              <div class="timeline-role" data-en="M.Sc. in Civil Engineering" data-zh="土木工程 理学硕士 (M.Sc.)">M.Sc. in Civil Engineering</div>
+              <div class="timeline-inst" data-en="University of California, Berkeley, USA" data-zh="美国加州大学伯克利分校 (UC Berkeley)">University of California, Berkeley, USA</div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">07/2015 – 09/2019</div>
+              <div class="timeline-role" data-en="B.E. in Civil Engineering" data-zh="土木工程 工学学士 (B.E.)">B.E. in Civil Engineering</div>
+              <div class="timeline-inst" data-en="Tongji University, Shanghai, China" data-zh="同济大学 土木工程学院，上海">Tongji University, Shanghai, China</div>
+              <div class="timeline-details"
+                   data-en="<strong>Minor:</strong> Applied Mathematics · Tongji First-Class Academic Excellence Scholarship (2016–2017)"
+                   data-zh="<strong>辅修专业：</strong>应用数学 · 连续两年获同济大学优秀学生一等奖学金 (2016–2017)">
+                <strong>Minor:</strong> Applied Mathematics · Tongji First-Class Academic Excellence Scholarship (2016–2017)
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Appointments Column -->
+        <div class="panel-card">
+          <h3 class="panel-heading">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            <span data-en="Academic & Industry Appointments" data-zh="学术与工程实践履历">Academic & Industry Appointments</span>
+          </h3>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-date" data-en="01/2025 – Present" data-zh="2025.01 – 至今">01/2025 – Present</div>
+              <div class="timeline-role" data-en="Postdoctoral Researcher (Postdoctoral Scholar)" data-zh="博士后研究员 (Postdoctoral Scholar)">Postdoctoral Researcher (Postdoctoral Scholar)</div>
+              <div class="timeline-inst" data-en="Department of Civil & Environmental Engineering, UC Berkeley" data-zh="加州大学伯克利分校 土木与环境工程系">Department of Civil & Environmental Engineering, UC Berkeley</div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">09/2022 – 12/2025</div>
+              <div class="timeline-role" data-en="Research Affiliate" data-zh="兼职研究学者 (Research Affiliate)">Research Affiliate</div>
+              <div class="timeline-inst" data-en="Lawrence Berkeley National Laboratory (LBNL)" data-zh="美国劳伦斯伯克利国家实验室 (LBNL)">Lawrence Berkeley National Laboratory (LBNL)</div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">10/2023 – 01/2024</div>
+              <div class="timeline-role" data-en="Visiting Scientist" data-zh="访问科学家 (Visiting Scientist)">Visiting Scientist</div>
+              <div class="timeline-inst" data-en="Rothamsted Research, Harpenden, United Kingdom" data-zh="英国洛桑研究所 (Rothamsted Research)">Rothamsted Research, Harpenden, United Kingdom</div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">09/2020 – 09/2024</div>
+              <div class="timeline-role" data-en="Graduate Student Researcher (GSR)" data-zh="研究生研究员 (GSR)">Graduate Student Researcher (GSR)</div>
+              <div class="timeline-inst" data-en="University of California, Berkeley" data-zh="加州大学伯克利分校">University of California, Berkeley</div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">05/2018 – 09/2019</div>
+              <div class="timeline-role" data-en="Engineering Internships & Visiting Student" data-zh="工程实习与访问学者经历">Engineering Internships & Visiting Student</div>
+              <div class="timeline-details"
+                   data-en="• <strong>Shanghai Tunnel Engineering Co.</strong> — Intern (05/2019 – 09/2019)<br>• <strong>UC Berkeley</strong> — Visiting Student &amp; Graduate Student Instructor (09/2018 – 05/2019)<br>• <strong>China Railway Design Corporation</strong> — Intern (05/2018 – 09/2018)"
+                   data-zh="• <strong>上海隧道工程有限公司</strong> — 工程实习 (2019.05 – 2019.09)<br>• <strong>加州大学伯克利分校</strong> — 访问学生及研究生助教 (2018.09 – 2019.05)<br>• <strong>中国铁路设计集团有限公司</strong> — 工程实习 (2018.05 – 2018.09)">
+                • <strong>Shanghai Tunnel Engineering Co.</strong> — Intern (05/2019 – 09/2019)<br>
+                • <strong>UC Berkeley</strong> — Visiting Student &amp; Graduate Student Instructor (09/2018 – 05/2019)<br>
+                • <strong>China Railway Design Corporation</strong> — Intern (05/2018 – 09/2018)
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         Teaching, Mentoring, Invited Talks & Service Section
+         ====================================================================== -->
+    <section id="teaching" class="section">
+      <div class="section-header">
+        <div class="section-title-group">
+          <span class="section-kicker" data-en="Pedagogy, Mentorship & Academic Leadership" data-zh="教学、指导学生与学术服务">Pedagogy, Mentorship & Academic Leadership</span>
+          <h2 class="section-title" data-en="Teaching, Talks & Professional Service" data-zh="教学经历、特邀报告与学术服务">Teaching, Talks & Professional Service</h2>
+        </div>
+      </div>
+
+      <div class="two-col-layout">
+        <!-- Left Column: Teaching, Mentoring & Invited Talks -->
+        <div class="panel-card">
+          <h3 class="panel-heading">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            <span data-en="Teaching & Mentorship at UC Berkeley" data-zh="加州大学伯克利分校教学与指导经历">Teaching & Mentorship at UC Berkeley</span>
+          </h3>
+
+          <div class="list-cards" style="margin-bottom: 26px;">
+            <div class="list-card-item">
+              <div class="list-card-top">
+                <span class="list-card-title" data-en="Infrastructure Sensing and Modeling — Course Project Leader" data-zh="基础设施传感与建模 — 课程项目负责人">Infrastructure Sensing and Modeling — Course Project Leader</span>
+                <span class="list-card-meta">Fall 2021, 2024, 2025</span>
+              </div>
+              <p class="list-card-desc"
+                 data-en="Led semester-long project teams integrating distributed fiber-optic sensors, laboratory experimentation, and numerical modeling. Designed a hands-on sensing experiment that generated data published in a peer-reviewed journal."
+                 data-zh="主导学期项目实践，引导学生将分布式光纤传感器、实验室加载测试与数值仿真相结合；所设计的教学动手实验直接产出了发表于同行评审期刊的科研成果。">
+                Led semester-long project teams integrating distributed fiber-optic sensors, laboratory experimentation, and numerical modeling. Designed a hands-on sensing experiment that generated data published in a peer-reviewed journal.
+              </p>
+            </div>
+
+            <div class="list-card-item">
+              <div class="list-card-top">
+                <span class="list-card-title" data-en="Applied Geophysics (CIV ENG C178) — Graduate Student Instructor (GSI)" data-zh="应用地球物理 (CIV ENG C178) — 研究生助教 (GSI)">Applied Geophysics (CIV ENG C178) — Graduate Student Instructor (GSI)</span>
+                <span class="list-card-meta">Fall 2019</span>
+              </div>
+              <p class="list-card-desc"
+                 data-en="Served as the only Graduate Student Instructor (GSI/TA) for the course at UC Berkeley, earning an instructor evaluation score of <strong>4.64 / 5.00</strong> (Department average: 4.23)."
+                 data-zh="担任加州大学伯克利分校该课程唯一的研究生助教（GSI/TA），获得 <strong>4.64 / 5.00</strong> 的优异学生评教成绩（院系平均：4.23）。">
+                Served as the only Graduate Student Instructor (GSI/TA) for the course at UC Berkeley, earning an instructor evaluation score of <strong>4.64 / 5.00</strong> (Department average: 4.23).
+              </p>
+            </div>
+
+            <div class="list-card-item">
+              <div class="list-card-top">
+                <span class="list-card-title" data-en="Graduate & Doctoral Student Mentorship" data-zh="硕士与博士研究生联合指导">Graduate & Doctoral Student Mentorship</span>
+                <span class="list-card-meta">Soga Research Group</span>
+              </div>
+              <p class="list-card-desc"
+                 data-en="Co-advised and mentored five graduate and doctoral researchers in the Soga Research Group through experimental design, computational mechanics code development, and manuscript preparation: <strong>Maksymilian Jasiak, Shih-Hung Chiu, Yan Wu, Jiahui Yang, and Fanbao Cheng</strong>."
+                 data-zh="在 Soga 教授课题组直接指导与联合指导 5 名硕博研究生开展实验设计、计算力学代码开发与高水平论文撰写：<strong>Maksymilian Jasiak、Shih-Hung Chiu、Yan Wu、Jiahui Yang、Fanbao Cheng</strong>。">
+                Co-advised and mentored five graduate and doctoral researchers in the Soga Research Group through experimental design, computational mechanics code development, and manuscript preparation: <strong>Maksymilian Jasiak, Shih-Hung Chiu, Yan Wu, Jiahui Yang, and Fanbao Cheng</strong>.
+              </p>
+            </div>
+          </div>
+
+          <h3 class="panel-heading">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+            <span data-en="Invited Keynotes & Workshops" data-zh="特邀主题报告与研讨会">Invited Keynotes & Workshops</span>
+          </h3>
+
+          <div class="list-cards">
+            <div class="list-card-item">
+              <div class="list-card-top">
+                <span class="list-card-title" data-en="ICRI Youth Lecturer Series — Keynote Speaker" data-zh="国际弹性基础设施联合研究中心 (ICRI) 青年学者讲座 — 主题报告">ICRI Youth Lecturer Series — Keynote Speaker</span>
+                <span class="list-card-meta">2026 · Shanghai</span>
+              </div>
+              <p class="list-card-desc"><em>“Advancing Distributed Fiber-optics Sensing through Physically Grounded Mathematical Frameworks”</em> (<a href="https://civileng.tongji.edu.cn/civilengen/7b/2f/c18043a228143/page.htm" target="_blank" rel="noopener">Event Link</a>)</p>
+            </div>
+
+            <div class="list-card-item">
+              <div class="list-card-top">
+                <span class="list-card-title" data-en="NSF GCR Project Event: Rooted in Nature — Keynote Speaker" data-zh="NSF GCR 项目会议：根植自然 — 主题报告">NSF GCR Project Event: Rooted in Nature — Keynote Speaker</span>
+                <span class="list-card-meta">2026 · Berkeley, CA</span>
+              </div>
+              <p class="list-card-desc"><em>“Mechanisms for Falling Seeds and Numerical Simulations”</em></p>
+            </div>
+
+            <div class="list-card-item">
+              <div class="list-card-top">
+                <span class="list-card-title" data-en="UC Berkeley Geotechnical Engineering Research Symposium — Keynote Speaker" data-zh="加州大学伯克利分校岩土工程研究研讨会 — 主题报告">UC Berkeley Geotechnical Engineering Research Symposium — Keynote Speaker</span>
+                <span class="list-card-meta">2024 · Berkeley, CA</span>
+              </div>
+              <p class="list-card-desc"><em>“Fiber-Optic Shape Sensing and Error Analysis with the Cosserat Theory of Rods”</em></p>
+            </div>
+
+            <div class="list-card-item">
+              <div class="list-card-top">
+                <span class="list-card-title" data-en="NSF–UKRI Hybrid Signals in the Soil (SitS) Workshop" data-zh="NSF–UKRI 土壤信号混合研讨会 (SitS)">NSF–UKRI Hybrid Signals in the Soil (SitS) Workshop</span>
+                <span class="list-card-meta">2024 · Alexandria, VA</span>
+              </div>
+              <p class="list-card-desc"><em>“Locating Cracks Using Distributed Fiber Optics Sensing in Mesocosms and Field by Utilizing a Spectrum Based BOTDA”</em></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Honors, Peer Review, Technical Stack -->
+        <div class="panel-card">
+          <h3 class="panel-heading">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+            <span data-en="Honors & Awards" data-zh="荣誉与奖项">Honors & Awards</span>
+          </h3>
+
+          <div class="list-cards" style="margin-bottom: 26px;">
+            <div class="list-card-item">
+              <div class="list-card-top">
+                <span class="list-card-title" data-en="Mathematical Contest in Modeling (MCM/ICM)" data-zh="美国大学生数学建模竞赛 (MCM/ICM)">Mathematical Contest in Modeling (MCM/ICM)</span>
+                <span class="list-card-meta">2018</span>
+              </div>
+              <p class="list-card-desc" data-en="Meritorious Winner (M Prize), COMAP International" data-zh="国际一等奖 (Meritorious Winner, M Prize)">Meritorious Winner (M Prize), COMAP International</p>
+            </div>
+
+            <div class="list-card-item">
+              <div class="list-card-top">
+                <span class="list-card-title" data-en="Tongji University Academic Excellence" data-zh="同济大学优秀学生奖学金">Tongji University Academic Excellence</span>
+                <span class="list-card-meta">2016 – 2017</span>
+              </div>
+              <p class="list-card-desc" data-en="First-Class Scholarship (Consecutive 2 Years)" data-zh="一等奖学金（连续两年）">First-Class Scholarship (Consecutive 2 Years)</p>
+            </div>
+
+            <div class="list-card-item">
+              <div class="list-card-top">
+                <span class="list-card-title" data-en="National College Mathematics Competition (CMC)" data-zh="全国大学生数学竞赛 (CMC)">National College Mathematics Competition (CMC)</span>
+                <span class="list-card-meta">2016</span>
+              </div>
+              <p class="list-card-desc" data-en="National First Prize (Non-Mathematics Major Category)" data-zh="全国一等奖（非数学专业组）">National First Prize (Non-Mathematics Major Category)</p>
+            </div>
+          </div>
+
+          <h3 class="panel-heading">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+            <span data-en="Professional Service & Technical Stack" data-zh="学术服务与技术栈">Professional Service & Technical Stack</span>
+          </h3>
+
+          <div class="skill-groups">
+            <div class="skill-row">
+              <span class="skill-label" data-en="Journal Peer Reviewer" data-zh="国际期刊审稿人">Journal Peer Reviewer</span>
+              <div class="research-tags">
+                <span class="tag-pill">ASCE J. Geotech. Geoenv. Eng. (JGGE)</span>
+                <span class="tag-pill">Canadian Geotechnical Journal (CGJ)</span>
+                <span class="tag-pill">Comput. Methods Appl. Mech. Eng. (CMAME)</span>
+                <span class="tag-pill">Applied Mathematical Modelling</span>
+              </div>
+            </div>
+
+            <div class="skill-row">
+              <span class="skill-label" data-en="Professional Memberships" data-zh="学术组织会员">Professional Memberships</span>
+              <div class="research-tags">
+                <span class="tag-pill">American Society of Civil Engineers (ASCE)</span>
+                <span class="tag-pill">American Geophysical Union (AGU)</span>
+              </div>
+            </div>
+
+            <div class="skill-row">
+              <span class="skill-label" data-en="Scientific Computing & Software" data-zh="科学计算与工程软件">Scientific Computing & Software</span>
+              <div class="research-tags">
+                <span class="tag-pill">C++</span>
+                <span class="tag-pill">Python</span>
+                <span class="tag-pill">MATLAB</span>
+                <span class="tag-pill">deal.II (Matrix-Free FEM/DG)</span>
+                <span class="tag-pill">ABAQUS</span>
+                <span class="tag-pill">COMSOL Multiphysics</span>
+                <span class="tag-pill">AutoCAD</span>
+                <span class="tag-pill">LaTeX</span>
+              </div>
+            </div>
+
+            <div class="skill-row">
+              <span class="skill-label" data-en="Languages" data-zh="语言能力">Languages</span>
+              <div class="research-tags">
+                <span class="tag-pill" data-en="English (Fluent)" data-zh="英语 (流利)">English (Fluent)</span>
+                <span class="tag-pill" data-en="Mandarin Chinese (Native)" data-zh="中文普通话 (母语)">Mandarin Chinese (Native)</span>
+                <span class="tag-pill" data-en="Russian (Basic)" data-zh="俄语 (基础)">Russian (Basic)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       Footer
+       ======================================================================== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <strong data-en="Yaobin Yang, Ph.D." data-zh="杨耀斌 博士 (Yaobin Yang, Ph.D.)">Yaobin Yang, Ph.D.</strong> ·
+        <span data-en="Department of Civil and Environmental Engineering, UC Berkeley" data-zh="加州大学伯克利分校 土木与环境工程系">Department of Civil and Environmental Engineering, UC Berkeley</span>
+      </div>
+      <div>
+        <span>408 Davis Hall, Berkeley, CA 94720 · </span>
+        <a href="mailto:yangyaobin@berkeley.edu">yangyaobin@berkeley.edu</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       Modal 1: BibTeX Citation Viewer
+       ======================================================================== -->
+  <div class="modal-backdrop" id="bibtex-modal" role="dialog" aria-modal="true" aria-labelledby="bibtex-modal-title">
+    <div class="modal-box">
+      <div class="modal-header">
+        <span class="modal-title" id="bibtex-modal-title" data-en="BibTeX Citation" data-zh="BibTeX 引用格式">BibTeX Citation</span>
+        <button type="button" class="modal-close" data-close-bibtex aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <pre class="bibtex-pre" id="bibtex-content"></pre>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-close-bibtex data-en="Close" data-zh="关闭">Close</button>
+        <button type="button" class="btn btn-primary" id="bibtex-copy-btn" data-en="Copy BibTeX" data-zh="复制 BibTeX">Copy BibTeX</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       Modal 2: Research Figure Lightbox
+       ======================================================================== -->
+  <div class="modal-backdrop" id="lightbox-modal" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+    <div class="modal-box lightbox-box">
+      <div class="modal-header">
+        <span class="modal-title" id="lightbox-title">Research Figure</span>
+        <button type="button" class="modal-close" data-close-lightbox aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="lightbox-img-wrap">
+          <img src="" alt="Full resolution research figure" id="lightbox-img" />
+        </div>
+        <p class="lightbox-caption" id="lightbox-caption"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Script -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
