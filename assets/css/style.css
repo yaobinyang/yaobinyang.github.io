@@ -686,6 +686,226 @@ img {
 }
 
 /* ==========================================================================
+   Simulation & Experimental Video Showcase (#simulations)
+   ========================================================================== */
+.sim-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 24px;
+  background: var(--bg-secondary);
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.sim-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.sim-tab {
+  padding: 7px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.sim-tab:hover {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.sim-tab.active {
+  background: #003262;
+  color: #ffffff;
+}
+
+[data-theme="dark"] .sim-tab.active {
+  background: var(--accent-primary);
+  color: #0b1120;
+}
+
+.sim-autoplay-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sim-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.sim-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition);
+}
+
+.sim-card:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent-primary);
+  transform: translateY(-3px);
+}
+
+.sim-card.sim-featured {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+}
+
+.sim-media-wrap {
+  position: relative;
+  background: #090d16;
+  border-bottom: 1px solid var(--border-color);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 260px;
+  aspect-ratio: 16 / 10;
+}
+
+.sim-card.sim-featured .sim-media-wrap {
+  border-bottom: none;
+  border-right: 1px solid var(--border-color);
+  aspect-ratio: auto;
+  min-height: 340px;
+}
+
+.sim-media-wrap video,
+.sim-media-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  background: #090d16;
+}
+
+.sim-media-wrap iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.sim-badge-overlay {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 4;
+  background: rgba(11, 17, 32, 0.82);
+  backdrop-filter: blur(8px);
+  color: #fdb515;
+  border: 1px solid rgba(253, 181, 21, 0.35);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  pointer-events: none;
+  letter-spacing: 0.02em;
+}
+
+.sim-expand-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 4;
+  background: rgba(11, 17, 32, 0.82);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  font-weight: 600;
+  padding: 5px 11px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: all var(--transition);
+}
+
+.sim-expand-btn:hover {
+  background: #003262;
+  color: #fdb515;
+  border-color: #fdb515;
+}
+
+.sim-body {
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.sim-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--accent-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.sim-title {
+  font-size: 1.14rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.35;
+}
+
+.sim-card.sim-featured .sim-title {
+  font-size: 1.32rem;
+}
+
+.sim-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  flex: 1;
+}
+
+.sim-links-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding-top: 6px;
+}
+
+.lightbox-video {
+  max-height: 68vh;
+  max-width: 100%;
+  width: auto;
+  border-radius: var(--radius-sm);
+  background: #000000;
+  display: none;
+}
+
+/* ==========================================================================
    Publications & Patents Explorer
    ========================================================================== */
 .pub-controls {
@@ -1302,10 +1522,19 @@ img {
   .pillars-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .sim-grid,
   .research-grid,
   .projects-grid,
   .two-col-layout {
     grid-template-columns: 1fr;
+  }
+  .sim-card.sim-featured {
+    grid-template-columns: 1fr;
+  }
+  .sim-card.sim-featured .sim-media-wrap {
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    min-height: 260px;
   }
 }
 

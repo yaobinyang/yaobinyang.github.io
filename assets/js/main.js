@@ -127,6 +127,24 @@ const BIBTEX_ENTRIES = {
   author = {Yang, Yaobin},
   year   = {2024},
   school = {University of California, Berkeley}
+}`,
+  "yang2026pf_thm": `@unpublished{yang2026pf_thm,
+  author = {Yang, Yaobin and Soga, Kenichi},
+  title  = {A Monolithic 5-Field Thermo-Hydro-Mechanical and Variational Phase-Field Fracture Framework with Matrix-Free Geometric Multigrid for Unsaturated Porous Media},
+  year   = {2026},
+  note   = {Manuscript in Preparation}
+}`,
+  "yang2026dpg": `@unpublished{yang2026dpg,
+  author = {Yang, Yaobin and Soga, Kenichi},
+  title  = {An Ultraweak Discontinuous Petrov-Galerkin Helmholtz Solver for Three-Phase Poroelastic Wave Propagation in Unsaturated Soil},
+  year   = {2026},
+  note   = {In Preparation for International Journal for Numerical Methods in Engineering}
+}`,
+  "yang2026mpm": `@unpublished{yang2026mpm,
+  author = {Yang, Yaobin and Soga, Kenichi},
+  title  = {Parallel 3D Material Point Method on Distributed Octree Grids with Bercovier-Pironneau Volumetric Projection and Tension Cracking for Rotary Drilling and Penetration in Sensitive Clay},
+  year   = {2026},
+  note   = {Manuscript in Preparation}
 }`
 };
 
@@ -294,17 +312,60 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ------------------------------------------------------------------------
-     6. Research Figure Lightbox Modal
+     5b. Simulation & Experimental Video Gallery Filter
+     ------------------------------------------------------------------------ */
+  const simTabs = document.querySelectorAll(".sim-tab");
+  const simCards = document.querySelectorAll(".sim-card");
+
+  simTabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      simTabs.forEach((t) => t.classList.remove("active"));
+      tab.classList.add("active");
+      const filter = tab.getAttribute("data-sim-filter") || "all";
+
+      simCards.forEach((card) => {
+        const cats = (card.getAttribute("data-sim-category") || "").split(" ");
+        const show = filter === "all" || cats.includes(filter);
+        card.style.display = show ? "" : "none";
+        const vid = card.querySelector("video");
+        if (vid) {
+          if (show && vid.hasAttribute("autoplay")) {
+            vid.play().catch(() => {});
+          } else {
+            vid.pause();
+          }
+        }
+      });
+    });
+  });
+
+  /* ------------------------------------------------------------------------
+     6. Research Figure & Simulation Video Lightbox Modal
      ------------------------------------------------------------------------ */
   const lightboxModal = document.getElementById("lightbox-modal");
   const lightboxImg = document.getElementById("lightbox-img");
+  const lightboxVideo = document.getElementById("lightbox-video");
   const lightboxTitle = document.getElementById("lightbox-title");
   const lightboxCaption = document.getElementById("lightbox-caption");
   const lightboxCloseBtns = document.querySelectorAll("[data-close-lightbox]");
 
-  document.querySelectorAll("[data-lightbox-src]").forEach((trigger) => {
+  function closeLightbox() {
+    if (lightboxModal) lightboxModal.classList.remove("open");
+    if (lightboxVideo) {
+      lightboxVideo.pause();
+      lightboxVideo.removeAttribute("src");
+      lightboxVideo.load();
+      lightboxVideo.style.display = "none";
+    }
+    if (lightboxImg) {
+      lightboxImg.style.display = "block";
+    }
+  }
+
+  document.querySelectorAll("[data-lightbox-src], [data-lightbox-video]").forEach((trigger) => {
     trigger.addEventListener("click", () => {
-      const src = trigger.getAttribute("data-lightbox-src");
+      const imgSrc = trigger.getAttribute("data-lightbox-src");
+      const videoSrc = trigger.getAttribute("data-lightbox-video");
       const lang = document.documentElement.getAttribute("data-lang") || "en";
       const title =
         lang === "zh"
@@ -315,8 +376,20 @@ document.addEventListener("DOMContentLoaded", () => {
           ? trigger.getAttribute("data-caption-zh")
           : trigger.getAttribute("data-caption-en");
 
-      if (lightboxImg && lightboxModal) {
-        lightboxImg.src = src;
+      if (lightboxModal) {
+        if (videoSrc && lightboxVideo) {
+          if (lightboxImg) lightboxImg.style.display = "none";
+          lightboxVideo.style.display = "block";
+          lightboxVideo.src = videoSrc;
+          lightboxVideo.play().catch(() => {});
+        } else if (imgSrc && lightboxImg) {
+          if (lightboxVideo) {
+            lightboxVideo.pause();
+            lightboxVideo.style.display = "none";
+          }
+          lightboxImg.style.display = "block";
+          lightboxImg.src = imgSrc;
+        }
         if (lightboxTitle) lightboxTitle.textContent = title || "";
         if (lightboxCaption) lightboxCaption.textContent = caption || "";
         lightboxModal.classList.add("open");
@@ -325,21 +398,19 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   lightboxCloseBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      if (lightboxModal) lightboxModal.classList.remove("open");
-    });
+    btn.addEventListener("click", closeLightbox);
   });
 
   // Close modals on backdrop click or Escape key
   window.addEventListener("click", (e) => {
     if (e.target === bibModal) bibModal.classList.remove("open");
-    if (e.target === lightboxModal) lightboxModal.classList.remove("open");
+    if (e.target === lightboxModal) closeLightbox();
   });
 
   window.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       if (bibModal) bibModal.classList.remove("open");
-      if (lightboxModal) lightboxModal.classList.remove("open");
+      if (lightboxModal) closeLightbox();
     }
   });
 
