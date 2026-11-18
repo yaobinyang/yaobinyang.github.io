@@ -1,7 +1,7 @@
 /* ==========================================================================
-   Yaobin Yang, Ph.D. — Interactive Academic Portfolio Script
-   Handles: Theme Toggle, Bilingual (EN/ZH) Switch, Publication Filter,
-   BibTeX Viewer/Copy, and Research Figure Lightbox
+   al-folio Academic Theme Script for Yaobin Yang, Ph.D.
+   Handles: Theme Toggle, Bilingual Switch (EN/ZH), Inline ABS/BIB Drawers,
+   Publication Year-Aware Filtering, Video Showcase Tabs, and Lightbox Modal
    ========================================================================== */
 
 const BIBTEX_ENTRIES = {
@@ -131,116 +131,153 @@ const BIBTEX_ENTRIES = {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  /* ------------------------------------------------------------------------
-     1. Theme Toggle (Light / Dark)
-     ------------------------------------------------------------------------ */
-  const themeBtn = document.getElementById("theme-toggle");
-  const themeLabel = document.getElementById("theme-label");
+  /* ========================================================================
+     1. Dark / Light Theme Toggle
+     ======================================================================== */
+  const themeToggle = document.getElementById("theme-toggle");
+  const htmlEl = document.documentElement;
   const savedTheme = localStorage.getItem("yy_theme") || "light";
+  htmlEl.setAttribute("data-theme", savedTheme);
 
-  function applyTheme(theme) {
-    document.documentElement.setAttribute("data-theme", theme);
-    localStorage.setItem("yy_theme", theme);
-    if (themeLabel) {
-      const currentLang = document.documentElement.getAttribute("data-lang") || "en";
-      if (theme === "dark") {
-        themeLabel.textContent = currentLang === "zh" ? "浅色" : "Light";
-      } else {
-        themeLabel.textContent = currentLang === "zh" ? "深色" : "Dark";
-      }
-    }
-  }
+  const updateThemeIcon = (theme) => {
+    if (!themeToggle) return;
+    themeToggle.innerHTML = theme === "dark"
+      ? `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>`
+      : `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;
+  };
+  updateThemeIcon(savedTheme);
 
-  applyTheme(savedTheme);
-
-  if (themeBtn) {
-    themeBtn.addEventListener("click", () => {
-      const current = document.documentElement.getAttribute("data-theme") || "light";
-      applyTheme(current === "dark" ? "light" : "dark");
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      const next = htmlEl.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      htmlEl.setAttribute("data-theme", next);
+      localStorage.setItem("yy_theme", next);
+      updateThemeIcon(next);
     });
   }
 
-  /* ------------------------------------------------------------------------
-     2. Bilingual Switcher (EN / 中文)
-     ------------------------------------------------------------------------ */
-  const langBtn = document.getElementById("lang-toggle");
-  const langLabel = document.getElementById("lang-label");
-  const savedLang = localStorage.getItem("yy_lang") || "en";
+  /* ========================================================================
+     2. Bilingual (EN / 中文) Toggle
+     ======================================================================== */
+  const langToggle = document.getElementById("lang-toggle");
+  let currentLang = localStorage.getItem("yy_lang") || "en";
 
-  function applyLanguage(lang) {
-    document.documentElement.setAttribute("data-lang", lang);
-    document.documentElement.setAttribute("lang", lang === "zh" ? "zh-CN" : "en");
+  const applyLanguage = (lang) => {
+    currentLang = lang;
     localStorage.setItem("yy_lang", lang);
+    htmlEl.setAttribute("lang", lang === "zh" ? "zh-CN" : "en");
 
-    if (langLabel) {
-      langLabel.textContent = lang === "zh" ? "EN" : "中文";
+    if (langToggle) {
+      langToggle.textContent = lang === "zh" ? "EN" : "中文";
     }
 
-    // Update all elements with data-en / data-zh
     document.querySelectorAll("[data-en][data-zh]").forEach((el) => {
-      const content = lang === "zh" ? el.getAttribute("data-zh") : el.getAttribute("data-en");
+      const val = lang === "zh" ? el.getAttribute("data-zh") : el.getAttribute("data-en");
       if (el.tagName === "INPUT") {
-        el.setAttribute("placeholder", content);
+        el.setAttribute("placeholder", val);
       } else {
-        el.innerHTML = content;
+        el.innerHTML = val;
       }
     });
+  };
 
-    // Refresh theme button label in the active language
-    const currentTheme = document.documentElement.getAttribute("data-theme") || "light";
-    applyTheme(currentTheme);
-  }
+  applyLanguage(currentLang);
 
-  applyLanguage(savedLang);
-
-  if (langBtn) {
-    langBtn.addEventListener("click", () => {
-      const current = document.documentElement.getAttribute("data-lang") || "en";
-      applyLanguage(current === "en" ? "zh" : "en");
+  if (langToggle) {
+    langToggle.addEventListener("click", () => {
+      applyLanguage(currentLang === "en" ? "zh" : "en");
     });
   }
 
-  /* ------------------------------------------------------------------------
-     3. Mobile Navigation Menu
-     ------------------------------------------------------------------------ */
-  const mobileMenuBtn = document.getElementById("mobile-menu-btn");
-  const navLinks = document.getElementById("nav-links");
-
-  if (mobileMenuBtn && navLinks) {
-    mobileMenuBtn.addEventListener("click", () => {
-      navLinks.classList.toggle("open");
+  /* ========================================================================
+     3. Mobile Navbar Menu Toggle
+     ======================================================================== */
+  const navToggler = document.getElementById("navbar-toggler");
+  const navMenu = document.getElementById("navbar-nav");
+  if (navToggler && navMenu) {
+    navToggler.addEventListener("click", () => {
+      navMenu.classList.toggle("open");
     });
-
-    navLinks.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("open");
-      });
+    navMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => navMenu.classList.remove("open"));
     });
   }
 
-  /* ------------------------------------------------------------------------
-     4. Publications Filter & Live Search
-     ------------------------------------------------------------------------ */
+  /* ========================================================================
+     4. Inline al-folio ABS & BIB Collapsible Drawers
+     ======================================================================== */
+  document.querySelectorAll("[data-toggle-abs]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const targetId = btn.getAttribute("data-toggle-abs");
+      const drawer = document.getElementById(targetId);
+      if (!drawer) return;
+      const isOpen = drawer.classList.toggle("open");
+      btn.classList.toggle("active", isOpen);
+    });
+  });
+
+  document.querySelectorAll("[data-bibtex]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const key = btn.getAttribute("data-bibtex");
+      const entry = BIBTEX_ENTRIES[key];
+      if (!entry) return;
+
+      const li = btn.closest("li");
+      if (!li) return;
+
+      let drawer = li.querySelector(".pub-bib-drawer");
+      if (!drawer) {
+        drawer = document.createElement("div");
+        drawer.className = "pub-drawer pub-bib-drawer";
+        drawer.innerHTML = `
+          <div class="pub-drawer-actions">
+            <button type="button" class="btn-sm copy-inline-bib" style="font-size:0.7rem;padding:2px 8px;border:1px solid var(--global-divider-color);background:transparent;color:var(--global-text-color);cursor:pointer;">Copy BibTeX</button>
+          </div>
+          <pre></pre>
+        `;
+        drawer.querySelector("pre").textContent = entry;
+        drawer.querySelector(".copy-inline-bib").addEventListener("click", (e) => {
+          const copyBtn = e.currentTarget;
+          navigator.clipboard.writeText(entry).then(() => {
+            copyBtn.textContent = currentLang === "zh" ? "已复制 ✓" : "Copied ✓";
+            setTimeout(() => {
+              copyBtn.textContent = "Copy BibTeX";
+            }, 1800);
+          });
+        });
+        li.querySelector(".pub-main-col").appendChild(drawer);
+      }
+
+      const isOpen = drawer.classList.toggle("open");
+      btn.classList.toggle("active", isOpen);
+    });
+  });
+
+  /* ========================================================================
+     5. Publication Category & Search Filtering (Year-Group Aware)
+     ======================================================================== */
   const pubTabs = document.querySelectorAll(".pub-tab");
   const pubSearch = document.getElementById("pub-search");
-  const pubItems = document.querySelectorAll(".pub-item");
+  const pubGroups = document.querySelectorAll(".pub-year-group");
   let activeCategory = "all";
+  let searchQuery = "";
 
-  function filterPublications() {
-    const query = (pubSearch ? pubSearch.value : "").trim().toLowerCase();
-
-    pubItems.forEach((item) => {
-      const category = item.getAttribute("data-category") || "";
-      const text = item.textContent.toLowerCase();
-
-      const matchesCategory =
-        activeCategory === "all" ||
-        category.split(" ").includes(activeCategory);
-      const matchesQuery = !query || text.includes(query);
-
-      item.style.display = matchesCategory && matchesQuery ? "" : "none";
+  const filterPublications = () => {
+    const q = searchQuery.trim().toLowerCase();
+    pubGroups.forEach((group) => {
+      let visibleInGroup = 0;
+      group.querySelectorAll("li.pub-item").forEach((item) => {
+        const cat = item.getAttribute("data-category");
+        const text = item.textContent.toLowerCase();
+        const matchCat = activeCategory === "all" || cat === activeCategory;
+        const matchQuery = !q || text.includes(q);
+        const show = matchCat && matchQuery;
+        item.style.display = show ? "" : "none";
+        if (show) visibleInGroup++;
+      });
+      group.style.display = visibleInGroup > 0 ? "" : "none";
     });
-  }
+  };
 
   pubTabs.forEach((tab) => {
     tab.addEventListener("click", () => {
@@ -252,50 +289,15 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   if (pubSearch) {
-    pubSearch.addEventListener("input", filterPublications);
-  }
-
-  /* ------------------------------------------------------------------------
-     5. BibTeX Modal & Copy
-     ------------------------------------------------------------------------ */
-  const bibModal = document.getElementById("bibtex-modal");
-  const bibPre = document.getElementById("bibtex-content");
-  const bibCopyBtn = document.getElementById("bibtex-copy-btn");
-  const bibCloseBtns = document.querySelectorAll("[data-close-bibtex]");
-
-  document.querySelectorAll("[data-bibtex]").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const key = btn.getAttribute("data-bibtex");
-      const entry = BIBTEX_ENTRIES[key] || "";
-      if (bibPre && bibModal) {
-        bibPre.textContent = entry;
-        bibModal.classList.add("open");
-      }
-    });
-  });
-
-  bibCloseBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      if (bibModal) bibModal.classList.remove("open");
-    });
-  });
-
-  if (bibCopyBtn && bibPre) {
-    bibCopyBtn.addEventListener("click", () => {
-      navigator.clipboard.writeText(bibPre.textContent).then(() => {
-        const lang = document.documentElement.getAttribute("data-lang") || "en";
-        const originalText = bibCopyBtn.textContent;
-        bibCopyBtn.textContent = lang === "zh" ? "已复制！" : "Copied!";
-        setTimeout(() => {
-          bibCopyBtn.textContent = originalText;
-        }, 1800);
-      });
+    pubSearch.addEventListener("input", (e) => {
+      searchQuery = e.target.value || "";
+      filterPublications();
     });
   }
 
-  /* ------------------------------------------------------------------------
-     5b. Simulation & Experimental Video Gallery Filter
-     ------------------------------------------------------------------------ */
+  /* ========================================================================
+     6. Simulation & Video Showcase Category Filtering
+     ======================================================================== */
   const simTabs = document.querySelectorAll(".sim-tab");
   const simCards = document.querySelectorAll(".sim-card");
 
@@ -306,119 +308,97 @@ document.addEventListener("DOMContentLoaded", () => {
       const filter = tab.getAttribute("data-sim-filter") || "all";
 
       simCards.forEach((card) => {
-        const cats = (card.getAttribute("data-sim-category") || "").split(" ");
-        const show = filter === "all" || cats.includes(filter);
-        card.style.display = show ? "" : "none";
+        const cat = card.getAttribute("data-sim-category") || "";
+        const visible = filter === "all" || cat.split(" ").includes(filter);
+        card.style.display = visible ? "" : "none";
+
         const vid = card.querySelector("video");
         if (vid) {
-          if (show && vid.hasAttribute("autoplay")) {
-            vid.play().catch(() => {});
-          } else {
+          if (!visible) {
             vid.pause();
+          } else if (vid.hasAttribute("autoplay")) {
+            vid.play().catch(() => {});
           }
         }
       });
     });
   });
 
-  /* ------------------------------------------------------------------------
-     6. Research Figure & Simulation Video Lightbox Modal
-     ------------------------------------------------------------------------ */
+  /* ========================================================================
+     7. Lightbox Modal for Videos & High-Resolution Figures
+     ======================================================================== */
   const lightboxModal = document.getElementById("lightbox-modal");
   const lightboxImg = document.getElementById("lightbox-img");
   const lightboxVideo = document.getElementById("lightbox-video");
   const lightboxTitle = document.getElementById("lightbox-title");
   const lightboxCaption = document.getElementById("lightbox-caption");
-  const lightboxCloseBtns = document.querySelectorAll("[data-close-lightbox]");
+  const closeLightboxBtn = document.getElementById("close-lightbox");
 
-  function closeLightbox() {
-    if (lightboxModal) lightboxModal.classList.remove("open");
+  const closeLightbox = () => {
+    if (!lightboxModal) return;
+    lightboxModal.classList.remove("active");
     if (lightboxVideo) {
       lightboxVideo.pause();
       lightboxVideo.removeAttribute("src");
-      lightboxVideo.load();
       lightboxVideo.style.display = "none";
     }
-    if (lightboxImg) {
-      lightboxImg.style.display = "block";
-    }
-  }
+  };
 
-  document.querySelectorAll("[data-lightbox-src], [data-lightbox-video]").forEach((trigger) => {
-    trigger.addEventListener("click", () => {
-      const imgSrc = trigger.getAttribute("data-lightbox-src");
-      const videoSrc = trigger.getAttribute("data-lightbox-video");
-      const lang = document.documentElement.getAttribute("data-lang") || "en";
-      const title =
-        lang === "zh"
-          ? trigger.getAttribute("data-title-zh")
-          : trigger.getAttribute("data-title-en");
-      const caption =
-        lang === "zh"
-          ? trigger.getAttribute("data-caption-zh")
-          : trigger.getAttribute("data-caption-en");
+  document.querySelectorAll("[data-lightbox-src]").forEach((el) => {
+    el.addEventListener("click", () => {
+      const src = el.getAttribute("data-lightbox-src");
+      const title = currentLang === "zh"
+        ? (el.getAttribute("data-title-zh") || el.getAttribute("data-title-en"))
+        : el.getAttribute("data-title-en");
+      const caption = currentLang === "zh"
+        ? (el.getAttribute("data-caption-zh") || el.getAttribute("data-caption-en"))
+        : el.getAttribute("data-caption-en");
 
-      if (lightboxModal) {
-        if (videoSrc && lightboxVideo) {
-          if (lightboxImg) lightboxImg.style.display = "none";
-          lightboxVideo.style.display = "block";
-          lightboxVideo.src = videoSrc;
-          lightboxVideo.play().catch(() => {});
-        } else if (imgSrc && lightboxImg) {
-          if (lightboxVideo) {
-            lightboxVideo.pause();
-            lightboxVideo.style.display = "none";
-          }
-          lightboxImg.style.display = "block";
-          lightboxImg.src = imgSrc;
+      if (lightboxModal && lightboxImg) {
+        if (lightboxVideo) {
+          lightboxVideo.pause();
+          lightboxVideo.style.display = "none";
         }
+        lightboxImg.style.display = "block";
+        lightboxImg.src = src;
         if (lightboxTitle) lightboxTitle.textContent = title || "";
         if (lightboxCaption) lightboxCaption.textContent = caption || "";
-        lightboxModal.classList.add("open");
+        lightboxModal.classList.add("active");
       }
     });
   });
 
-  lightboxCloseBtns.forEach((btn) => {
-    btn.addEventListener("click", closeLightbox);
-  });
+  document.querySelectorAll("[data-lightbox-video]").forEach((el) => {
+    el.addEventListener("click", () => {
+      const src = el.getAttribute("data-lightbox-video");
+      const title = currentLang === "zh"
+        ? (el.getAttribute("data-title-zh") || el.getAttribute("data-title-en"))
+        : el.getAttribute("data-title-en");
+      const caption = currentLang === "zh"
+        ? (el.getAttribute("data-caption-zh") || el.getAttribute("data-caption-en"))
+        : el.getAttribute("data-caption-en");
 
-  // Close modals on backdrop click or Escape key
-  window.addEventListener("click", (e) => {
-    if (e.target === bibModal) bibModal.classList.remove("open");
-    if (e.target === lightboxModal) closeLightbox();
-  });
-
-  window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      if (bibModal) bibModal.classList.remove("open");
-      if (lightboxModal) closeLightbox();
-    }
-  });
-
-  /* ------------------------------------------------------------------------
-     7. Scroll Spy for Navbar Active Highlight
-     ------------------------------------------------------------------------ */
-  const sections = document.querySelectorAll("section[id]");
-  const navItems = document.querySelectorAll(".nav-links a");
-
-  window.addEventListener("scroll", () => {
-    let currentId = "";
-    const scrollY = window.scrollY + 120;
-
-    sections.forEach((sec) => {
-      const top = sec.offsetTop;
-      const height = sec.offsetHeight;
-      if (scrollY >= top && scrollY < top + height) {
-        currentId = sec.getAttribute("id");
+      if (lightboxModal && lightboxVideo) {
+        if (lightboxImg) lightboxImg.style.display = "none";
+        lightboxVideo.style.display = "block";
+        lightboxVideo.src = src;
+        lightboxVideo.play().catch(() => {});
+        if (lightboxTitle) lightboxTitle.textContent = title || "";
+        if (lightboxCaption) lightboxCaption.textContent = caption || "";
+        lightboxModal.classList.add("active");
       }
     });
+  });
 
-    navItems.forEach((link) => {
-      link.classList.remove("active");
-      if (link.getAttribute("href") === `#${currentId}`) {
-        link.classList.add("active");
-      }
+  if (closeLightboxBtn) {
+    closeLightboxBtn.addEventListener("click", closeLightbox);
+  }
+  if (lightboxModal) {
+    lightboxModal.addEventListener("click", (e) => {
+      if (e.target === lightboxModal) closeLightbox();
     });
+  }
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeLightbox();
   });
 });
