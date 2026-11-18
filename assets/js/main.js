@@ -1,10 +1,27 @@
 /* ==========================================================================
    al-folio Academic Theme Script for Yaobin Yang, Ph.D.
    Handles: Theme Toggle, Bilingual Switch (EN/ZH), Inline ABS/BIB Drawers,
-   Publication Year-Aware Filtering, Video Showcase Tabs, and Lightbox Modal
+   Publication Year-Aware Filtering, Project Tabs, and Lightbox Modal
    ========================================================================== */
 
 const BIBTEX_ENTRIES = {
+  "TransformingCriticalWaterPipelines": `@article{TransformingCriticalWaterPipelines,
+  author  = {Jasiak, Maksymilian and Yang, Yaobin and Wang, Chien-Chih and Chiu, Shih-Hung and Luo, Linqing and Hubbard, Peter and Xu, Yuankun and Zhang, Youqi and Burgmann, Roland and Soga, Kenichi},
+  title   = {Transforming Critical Water Pipelines into Seismic Fault Movement Sensors},
+  journal = {Geophysical Research Letters},
+  year    = {2026},
+  note    = {Accepted}
+}`,
+  "Shin_EccentricLoad": `@article{Shin_EccentricLoad,
+  author  = {Shin, Gyu-Beom and Yang, Yaobin and Pelecanos, Loizos and Mevoli, Federica Angela and Yeskoo, Andrew and Shantz, Tom and Soga, Kenichi},
+  title   = {Distributed Fiber Optic Sensing for Monitoring Piles under Eccentric Load},
+  journal = {Journal of Geotechnical and Geoenvironmental Engineering},
+  volume  = {152},
+  number  = {9},
+  pages   = {04026089},
+  year    = {2026},
+  doi     = {10.1061/JGGEFK.GTENG-14998}
+}`,
   "YANG2026108131": `@article{YANG2026108131,
   title   = {Inference of pile capacity from distributed strain sensing via PDE-constrained optimization},
   author  = {Yaobin Yang and Gyu-Beom Shin and Loizos Pelecanos and Chien-Chih Wang and Linqing Luo and Kenichi Soga},
@@ -14,13 +31,6 @@ const BIBTEX_ENTRIES = {
   year    = {2026},
   issn    = {0266-352X},
   doi     = {10.1016/j.compgeo.2026.108131}
-}`,
-  "Shin_EccentricLoad": `@article{Shin_EccentricLoad,
-  author  = {Shin, Gyu-Beom and Yang, Yaobin and Pelecanos, Loizos and Mevoli, Federica Angela and Yeskoo, Andrew and Shantz, Tom and Soga, Kenichi},
-  title   = {Distributed Fiber Optic Sensing for Monitoring Piles under Eccentric Load},
-  journal = {Journal of Geotechnical and Geoenvironmental Engineering},
-  year    = {2026},
-  doi     = {10.1061/JGGEFK/GTENG-14998}
 }`,
   "yang2025cosserat": `@article{yang2025cosserat,
   title     = {Cosserat rod-based modeling and stochastic analysis for distributed fiber optics shape-sensing},
@@ -42,54 +52,9 @@ const BIBTEX_ENTRIES = {
   publisher = {Elsevier},
   doi       = {10.1016/j.energy.2023.128224}
 }`,
-  "yang2026matrixfree": `@unpublished{yang2026matrixfree,
-  author = {Yang, Yaobin and Zhang, Teng and Kumar, Krishna and Soga, Kenichi and Perez, Claudio Matias and Luo, Linqing and Shin, Gyu-Beom},
-  title  = {A Matrix-Free Discontinuous Galerkin Method for Dynamic Cosserat Rod Simulation},
-  year   = {2026},
-  note   = {Under Review at Computer Methods in Applied Mechanics and Engineering; SSRN: https://ssrn.com/abstract=7417101}
-}`,
-  "TransformingCriticalWaterPipelines": `@unpublished{TransformingCriticalWaterPipelines,
-  author  = {Jasiak, Maksymilian and Yang, Yaobin and Wang, Chien-Chih and Chiu, Shih-Hung and Luo, Linqing and Hubbard, Peter and Xu, Yuankun and Zhang, Youqi and Burgmann, Roland and Soga, Kenichi},
-  title   = {Transforming Critical Water Pipelines into Seismic Fault Movement Sensors},
-  journal = {Geophysical Research Letters},
-  year    = {2026},
-  note    = {Under Review at Geophysical Research Letters}
-}`,
-  "Shin_Asemi": `@unpublished{Shin_Asemi,
-  author  = {Shin, Gyu-Beom and Yang, Yaobin and Pelecanos, Loizos and Mevoli, Federica Angela and Ouyang, Echo and Soga, Kenichi},
-  title   = {A Semi-Analytical Framework for Thermal Integrity Profiling of Cast-in-situ Piles Using Temperature Response Functions},
-  journal = {Journal of Geotechnical and Geoenvironmental Engineering},
-  year    = {2026},
-  note    = {Under Review at Journal of Geotechnical and Geoenvironmental Engineering}
-}`,
-  "gao2026embeddedfiberoptic": `@unpublished{gao2026embeddedfiberoptic,
-  author = {Gao, Jianhao and Niu, Yujun and Yang, Yaobin and Luo, Linqing and Soga, Kenichi and Wang, Chaofeng},
-  title  = {Embedded Fiber-optic Sensing in Printed Concrete for Structural Failure and Fracture Monitoring},
-  year   = {2026},
-  note   = {Under Review at Additive Manufacturing}
-}`,
-  "Yi2026Hygrochastic": `@unpublished{Yi2026Hygrochastic,
-  author = {Yi, Semina and Hong, Yaoye and Jaeger, Florentin C. and Freschi, Marco and Yang, Yaobin and Zhang, Ziyun and Lee, Hajun and Soga, Kenichi and Moler, Ehren and Zhang, Teng and Bauerle, Taryn L. and Yang, Shu and Yao, Lining},
-  title  = {Hygrochastic Seedpods: Engineering Microclimates for Ecological Restoration},
-  year   = {2026},
-  note   = {Under Review at Nature Ecology & Evolution}
-}`,
-  "luo2026flowinduced": `@unpublished{luo2026flowinduced,
-  author = {Luo, Linqing and Yang, Yaobin and Soga, Kenichi and Ryan, John and Wu, Yuxin},
-  title  = {Flow-Induced Vibration Suppression for Distributed Fiber Optic Sensing Cables in Turbulent Marine Environments},
-  year   = {2026},
-  note   = {Under Review at Journal of Ocean Engineering and Science}
-}`,
-  "Wang2026OptimalControl": `@unpublished{Wang2026OptimalControl,
-  author = {Wang, Yanglan and Delle Monache, Maria Laura and Yang, Yaobin and Soga, Kenichi},
-  title  = {Optimal Control Modeling for Switched Systems in Traffic Evacuation},
-  year   = {2026},
-  note   = {Under Review at Transportation Research Part C: Emerging Technologies; SSRN: https://ssrn.com/abstract=6727554},
-  doi    = {10.2139/ssrn.6727554}
-}`,
   "yang2027porepressure": `@inproceedings{yang2027porepressure,
   author    = {Yang, Yaobin and Luo, Linqing and Soga, Kenichi and Sun, Xiang},
-  title     = {Fiber-optic Miniature Pore Pressure Probe -- Design, Fabrication and Application},
+  title     = {Fiber-optic Miniature Pore Pressure Probe: Design, Fabrication and Application},
   booktitle = {ASCE Conference 2027},
   year      = {2027},
   note      = {Accepted Abstract, Paper Forthcoming. Abstract ID: ASCE2027-288}
@@ -296,7 +261,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ========================================================================
-     6. Simulation & Video Showcase Category Filtering
+     6. Project Category Filtering
      ======================================================================== */
   const simTabs = document.querySelectorAll(".sim-tab");
   const simCards = document.querySelectorAll(".sim-card");
