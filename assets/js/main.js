@@ -9,6 +9,15 @@ const BIBTEX_ENTRIES = {
   author  = {Jasiak, Maksymilian and Yang, Yaobin and Wang, Chien-Chih and Chiu, Shih-Hung and Luo, Linqing and Hubbard, Peter and Xu, Yuankun and Zhang, Youqi and Burgmann, Roland and Soga, Kenichi},
   title   = {Transforming Critical Water Pipelines into Seismic Fault Movement Sensors},
   journal = {Geophysical Research Letters},
+  volume  = {53},
+  number  = {22},
+  year    = {2026},
+  doi     = {10.1029/2026GL123978}
+}`,
+  "luo2026flowinduced": `@article{luo2026flowinduced,
+  author  = {Luo, Linqing and Yang, Yaobin and Soga, Kenichi and Ryan, John and Wu, Yuxin},
+  title   = {Flow-Induced Vibration Suppression for Distributed Fiber Optic Sensing Cables in Turbulent Marine Environments},
+  journal = {Journal of Ocean Engineering and Science},
   year    = {2026},
   note    = {Accepted}
 }`,
@@ -64,14 +73,32 @@ const BIBTEX_ENTRIES = {
   author    = {Araica, Krista and Cicala, Gus and McLeod, Marshall P and Soga, Kenichi and Jasiak, Maksymilian and Hubbard, Peter and Wang, Chien-Chih and Yang, Yaobin and Luo, Linqing and Yeskoo, Andrew and others},
   booktitle = {Pipelines 2024},
   pages     = {561--571},
-  year      = {2024}
+  year      = {2024},
+  doi       = {10.1061/9780784485569.060}
 }`,
   "sinha2024thermal": `@inproceedings{sinha2024thermal,
   title     = {Thermal Response Test of Geothermal Boreholes Using Distributed Fiber Optic Sensing},
   author    = {Sinha, Sumeet K and Yang, Jiahui and Yang, Yaobin and Nigh, Asha and Soga, Kenichi},
   booktitle = {Geo-Congress 2024},
   pages     = {493--503},
-  year      = {2024}
+  year      = {2024},
+  doi       = {10.1061/9780784485330.050}
+}`,
+  "yang2026matrixfree": `@unpublished{yang2026matrixfree,
+  author  = {Yang, Yaobin and Zhang, Teng and Kumar, Krishna and Soga, Kenichi and Perez, Claudio Matias and Luo, Linqing and Shin, Gyu-Beom},
+  title   = {A Matrix-Free Discontinuous Galerkin Method for Dynamic Cosserat Rod Simulation},
+  year    = {2026},
+  note    = {Under Review at Computer Methods in Applied Mechanics and Engineering},
+  doi     = {10.2139/ssrn.7417101},
+  url     = {https://ssrn.com/abstract=7417101}
+}`,
+  "Wang2026OptimalControl": `@unpublished{Wang2026OptimalControl,
+  author  = {Wang, Yanglan and {Delle Monache}, Maria Laura and Yang, Yaobin and Soga, Kenichi},
+  title   = {Optimal Control Modeling for Switched Systems in Traffic Evacuation},
+  year    = {2026},
+  note    = {Under Review at Transportation Research Part C: Emerging Technologies},
+  doi     = {10.2139/ssrn.6727554},
+  url     = {https://ssrn.com/abstract=6727554}
 }`,
   "illangasekare2022intermediate": `@inproceedings{illangasekare2022intermediate,
   title     = {Intermediate-scale testing of a spatially distributed sensing technology for monitoring greenhouse gas migration through vadose zone to the atmosphere},
@@ -91,7 +118,8 @@ const BIBTEX_ENTRIES = {
   title  = {Discontinuous Galerkin Finite Element Analysis and Experimental Sensors Innovations for Unsaturated Soil},
   author = {Yang, Yaobin},
   year   = {2024},
-  school = {University of California, Berkeley}
+  school = {University of California, Berkeley},
+  url    = {https://escholarship.org/uc/item/4gg741d8}
 }`
 };
 

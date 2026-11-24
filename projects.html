@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Yaobin Yang · UC Berkeley</title>
+  <meta name="description" content="Research projects, high-performance geomechanics simulations (3D MPM, DG-FEM Phase-Field, DPG), and distributed fiber-optic sensing deployments of Dr. Yaobin Yang." />
+  <meta name="author" content="Yaobin Yang" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&family=Roboto+Slab:wght@300;400;500;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- Fixed Top Navbar -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-brand" href="index.html">
+        <span class="font-weight-bold">Yaobin</span> Yang
+      </a>
+
+      <button class="navbar-toggler" id="navbar-toggler" type="button" aria-label="Toggle navigation">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+
+      <ul class="navbar-nav" id="navbar-nav">
+        <li><a class="nav-link" href="index.html" data-en="about" data-zh="关于">about</a></li>
+        <li><a class="nav-link" href="publications.html" data-en="publications" data-zh="论文">publications</a></li>
+        <li><a class="nav-link active" href="projects.html" data-en="projects" data-zh="项目与视频">projects</a></li>
+        <li><a class="nav-link" href="cv.html" data-en="cv" data-zh="履历">cv</a></li>
+        <li><a class="nav-link" href="teaching.html" data-en="teaching" data-zh="教学与服务">teaching</a></li>
+        <li class="nav-controls">
+          <button type="button" id="lang-toggle" class="nav-icon-btn" title="Switch Language (English / 中文)">中文</button>
+          <button type="button" id="theme-toggle" class="nav-icon-btn" title="Toggle Dark / Light Theme" aria-label="Toggle Theme"></button>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <div class="container mt-5">
+    <div class="post">
+
+      <header class="post-header">
+        <h1 class="post-title" data-en="projects" data-zh="研究项目与代表性展示 (projects)">projects</h1>
+        <p class="desc" data-en="Computational geomechanics, distributed fiber-optic sensing &amp; sponsored research." data-zh="高性能计算地质力学、分布式光纤传感与资助科研项目。">
+          Computational geomechanics, distributed fiber-optic sensing &amp; sponsored research.
+        </p>
+      </header>
+
+      <div class="sim-tabs">
+        <button type="button" class="sim-tab active" data-sim-filter="all" data-en="all (8)" data-zh="全部项目 (8)">all (8)</button>
+        <button type="button" class="sim-tab" data-sim-filter="computation" data-en="computational geomechanics (4)" data-zh="计算地质力学 (4)">computational geomechanics (4)</button>
+        <button type="button" class="sim-tab" data-sim-filter="sensing" data-en="fiber-optic sensing &amp; infrastructure (4)" data-zh="光纤传感与基础设施 (4)">fiber-optic sensing &amp; infrastructure (4)</button>
+      </div>
+
+      <div class="projects-grid" style="margin-bottom: 2rem;">
+
+        <!-- Project 1 (Full-Span): 3D deal.II-MPM Finest Grid (3.5M Particles) Split Half-and-Half -->
+        <article class="al-card sim-card full-span" data-sim-category="computation">
+          <div class="al-card-media split-video-media">
+            <div class="split-video-wrap">
+              <div class="split-center-line"></div>
+              <video src="assets/videos/drill_finest_h0.3125_photoreal_points.mp4" autoplay loop muted playsinline controls preload="metadata"></video>
+            </div>
+            <div class="split-labels-bar">
+              <div data-en="Left: Rendered Soil (Finest Grid: 3.5 Million Particles)" data-zh="左：真实土体碎屑渲染（最细网格：350 万质点）">Left: Rendered Soil (Finest Grid: 3.5 Million Particles)</div>
+              <div data-en="Right: MPM with Particles (Plastic Strain)" data-zh="右：物质点法（MPM）质点塑性应变视图">Right: MPM with Particles (Plastic Strain)</div>
+            </div>
+          </div>
+          <div class="al-card-body">
+            <h3 class="al-card-title" data-en="Parallel 3D Material Point Method for Drilling &amp; Penetration (Finest Grid: 3.5 Million Particles)" data-zh="面向旋转钻进与静力触探的并行三维物质点法（最细网格：350 万质点）">
+              Parallel 3D Material Point Method for Drilling &amp; Penetration (Finest Grid: 3.5 Million Particles)
+            </h3>
+            <p class="al-card-text"
+               data-en="Parallel explicit 3D MPM framework (deal.II-MPM) on p4est octree grids with inf-sup stable Bercovier-Pironneau volumetric projection, Einav-Randolph strain-softening remoulding, structured Modified Cam-Clay, and smeared tension cracking that resolves realistic soil clod formation."
+               data-zh="基于 p4est 分布式八叉树网格的并行三维物质点法（deal.II-MPM），融合满足 inf-sup 稳定性的体积应变投影、应变软化重塑与弥散拉裂本构，精细重现钻进土体碎裂成团机理。">
+              Parallel explicit 3D MPM framework (deal.II-MPM) on p4est octree grids with inf-sup stable Bercovier-Pironneau volumetric projection, Einav-Randolph strain-softening remoulding, structured Modified Cam-Clay, and smeared tension cracking that resolves realistic soil clod formation.
+            </p>
+            <div class="al-card-links">
+              <button type="button" class="btn-sm"
+                      data-lightbox-video="assets/videos/drill_finest_h0.3125_photoreal_points.mp4"
+                      data-title-en="Finest Grid: 3.5 Million Particles (Left: Rendered Soil · Right: MPM with Particles)"
+                      data-title-zh="最细网格：350 万质点（左：真实土体渲染 · 右：MPM 质点视图）"
+                      data-caption-en="Finest-grid 3D rotary drag-bit drilling simulation (h = 0.3125 mm, 3.5 million particles, tension cracking, St = 10): photorealistic soil clods ring on the left and MPM particle plastic strain field on the right.">
+                EXPAND VIDEO
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2 (Full-Span): Coupled THM & Phase-Field Fracture in Unsaturated Soil -->
+        <article class="al-card sim-card full-span" data-sim-category="computation">
+          <div class="al-card-media wide-video-media">
+            <video src="assets/videos/pf_desiccation_network_amr.mp4" autoplay loop muted playsinline controls preload="metadata"></video>
+          </div>
+          <div class="al-card-body">
+            <h3 class="al-card-title" data-en="Coupled THM &amp; Phase-Field Fracture in Unsaturated Soils" data-zh="非饱和土与土石坝热-水-力（THM）耦合相场断裂 (DG-FEM)">
+              Coupled THM &amp; Phase-Field Fracture in Unsaturated Soils
+            </h3>
+            <p class="al-card-text"
+               data-en="Matrix-free adaptive Discontinuous Galerkin and variational phase-field framework resolving matric suction, desiccation and hydraulic crack networks, and embankment dam safety with USACE and FEMA."
+               data-zh="无矩阵自适应间断伽辽金与变分相场断裂框架，解析非饱和土基质吸力、干缩/水力裂纹网络演化及土石坝裂缝安全评估（USACE &amp; FEMA）。">
+              Matrix-free adaptive Discontinuous Galerkin and variational phase-field framework resolving matric suction, desiccation and hydraulic crack networks, and embankment dam safety with USACE and FEMA.
+            </p>
+            <div class="al-card-links">
+              <button type="button" class="btn-sm"
+                      data-lightbox-video="assets/videos/pf_desiccation_network_amr.mp4"
+                      data-title-en="Coupled THM & Variational Phase-Field Desiccation Crack Network with Dynamic AMR"
+                      data-title-zh="非饱和土热-水-力（THM）耦合相场干缩裂纹网络与动态自适应网格"
+                      data-caption-en="Matrix-free Discontinuous Galerkin and AT2 variational phase-field fracture simulation capturing suction-driven crack nucleation, junction arrest, and dynamic mesh refinement.">
+                EXPAND VIDEO
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3: Distributed Fiber-Optic 3D Shape Sensing (1 Video) -->
+        <article class="al-card sim-card" data-sim-category="sensing">
+          <div class="al-card-media">
+            <span class="al-card-badge">Cosserat Rod · Live Shape Sensing</span>
+            <iframe src="https://www.youtube.com/embed/V-f6sZhzwOA?rel=0"
+                    title="Real-Time Distributed Fiber-Optic 3D Shape Sensing via Cosserat Rod Theory"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="al-card-body">
+            <h3 class="al-card-title" data-en="Real-Time Fiber-Optic 3D Shape Sensing under Uncertainty" data-zh="基于 Cosserat 杆理论的实时分布式光纤三维形状传感">
+              Real-Time Fiber-Optic 3D Shape Sensing under Uncertainty
+            </h3>
+            <p class="al-card-text"
+               data-en="Couples distributed optical fiber strain streams with nonlinear Cosserat rod kinematics and Lie-group stochastic error analysis to reconstruct 3D deformed shapes in real time with analytical confidence bounds."
+               data-zh="将分布式光纤应变测量与非线性 Cosserat 杆运动学及随机误差传递相结合，实现具有严格置信界的实时三维空间形态重构。">
+              Couples distributed optical fiber strain streams with nonlinear Cosserat rod kinematics and Lie-group stochastic error analysis to reconstruct 3D deformed shapes in real time with analytical confidence bounds.
+            </p>
+            <div class="al-card-links">
+              <a href="https://doi.org/10.1016/j.ymssp.2025.113457" target="_blank" rel="noopener" class="btn-sm">MSSP PAPER</a>
+              <a href="https://github.com/yaobinyang/Shape-sensing-matlab-code" target="_blank" rel="noopener" class="btn-sm">GITHUB CODE</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4: Critical Lifelines & Deep Foundations Monitoring via DFOS & PDECO (Figure) -->
+        <article class="al-card sim-card" data-sim-category="sensing">
+          <div class="al-card-media">
+            <span class="al-card-badge">DFOS + PDECO · Field Lifelines</span>
+            <button type="button" class="al-card-expand"
+                    data-lightbox-src="assets/img/fieldwork.jpg"
+                    data-title-en="Critical Water Lifelines & Deep Foundations Monitoring via DFOS and PDECO"
+                    data-title-zh="跨断层输水干线与桩基础分布式光纤监测及 PDE 约束优化反演"
+                    data-caption-en="Full-scale Hayward Fault water pipeline monitoring (~4 mm/yr fault-slip precision, GRL 2026), eccentric-load CIDH pile instrumentation (ASCE JGGE 2026), and PDE-constrained pile capacity inversion (CompGeo 2026).">
+              Expand
+            </button>
+            <img src="assets/img/fieldwork.jpg" alt="Hayward Fault pipeline and pile monitoring via DFOS" loading="lazy" />
+          </div>
+          <div class="al-card-body">
+            <h3 class="al-card-title" data-en="Critical Water Lifelines &amp; Deep Foundations Monitoring (PDECO)" data-zh="跨断层输水管道与桩基全尺寸光纤监测及承载力反演">
+              Critical Water Lifelines &amp; Deep Foundations Monitoring (PDECO)
+            </h3>
+            <p class="al-card-text"
+               data-en="Transforms an operating water pipeline crossing the Hayward Fault into a millimeter-per-year seismic fault sensor (GRL, 2026) and infers pile capacity and eccentric load-transfer via PDE-constrained optimization (CompGeo &amp; ASCE JGGE, 2026)."
+               data-zh="将穿越海沃德断层的在役输水管道转化为毫米/年精度的地震断层蠕滑传感器（GRL, 2026），并通过偏微分方程约束优化反演桩基承载力与偏心荷载响应（CompGeo &amp; ASCE JGGE, 2026）。">
+              Transforms an operating water pipeline crossing the Hayward Fault into a millimeter-per-year seismic fault sensor (GRL, 2026) and infers pile capacity and eccentric load-transfer via PDE-constrained optimization (CompGeo &amp; ASCE JGGE, 2026).
+            </p>
+            <div class="al-card-links">
+              <a href="https://doi.org/10.1016/j.compgeo.2026.108131" target="_blank" rel="noopener" class="btn-sm">COMPGEO</a>
+              <a href="https://doi.org/10.1061/JGGEFK.GTENG-14998" target="_blank" rel="noopener" class="btn-sm">ASCE JGGE</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 5: Ultraweak DPG 3D Poroelastic Wave Solver for DAS (Figure) -->
+        <article class="al-card sim-card" data-sim-category="computation">
+          <div class="al-card-media contain-media">
+            <span class="al-card-badge">Ultraweak DPG · Poroelastic Waves</span>
+            <button type="button" class="al-card-expand"
+                    data-lightbox-src="assets/img/dpg_3d_inclusions.png"
+                    data-title-en="3D Ultraweak Discontinuous Petrov-Galerkin (DPG) Poroelastic Wave Solver"
+                    data-title-zh="三维超弱间断 Petrov-Galerkin (DPG) 多孔弹性波求解器"
+                    data-caption-en="Unconditionally stable 2D/3D ultraweak DPG Helmholtz solver resolving P1, P2, and P3 wave modes and direct strain scattering across sharp saturation interfaces for Distributed Acoustic Sensing (DAS).">
+              Expand
+            </button>
+            <img src="assets/img/dpg_3d_inclusions.png" alt="3D Ultraweak DPG Poroelastic Wave Scattering" loading="lazy" />
+          </div>
+          <div class="al-card-body">
+            <h3 class="al-card-title" data-en="Ultraweak DPG Solver for 3D Poroelastic Waves &amp; DAS" data-zh="面向分布式声学传感的三维超弱 DPG 多孔弹性波求解器">
+              Ultraweak DPG Solver for 3D Poroelastic Waves &amp; DAS
+            </h3>
+            <p class="al-card-text"
+               data-en="Unconditionally inf-sup stable 2D/3D ultraweak Discontinuous Petrov-Galerkin Helmholtz solver for three-phase unsaturated poroelastic wave propagation across Biot-Darcy and squirt-flow regimes."
+               data-zh="无条件 inf-sup 稳定的三维超弱间断 Petrov-Galerkin（DPG）三相非饱和多孔弹性波求解器，无锁死解析跨饱和度突变界面的应变散射场。">
+              Unconditionally inf-sup stable 2D/3D ultraweak Discontinuous Petrov-Galerkin Helmholtz solver for three-phase unsaturated poroelastic wave propagation across Biot-Darcy and squirt-flow regimes.
+            </p>
+          </div>
+        </article>
+
+        <!-- Project 6: Dynamic Cosserat Rods & Bioinspired Self-Burrowing Actuators (Figure) -->
+        <article class="al-card sim-card" data-sim-category="sensing">
+          <div class="al-card-media contain-media">
+            <span class="al-card-badge">Cosserat Dynamics · Bioinspired Drilling</span>
+            <button type="button" class="al-card-expand"
+                    data-lightbox-src="assets/img/cosserat_capstan_braid.png"
+                    data-title-en="Matrix-Free DG Dynamic Cosserat Rods & Bioinspired Self-Burrowing Actuators"
+                    data-title-zh="无矩阵 DG 动态 Cosserat 杆与仿生自钻埋播种机器人"
+                    data-caption-en="Geometrically exact 3D Cosserat rod dynamics capturing frictional contact, multi-strand braiding, and seed-inspired aerial penetration mechanics (NSF GCR Rooted in Nature, U.S. Provisional Patent 63/877,853).">
+              Expand
+            </button>
+            <img src="assets/img/cosserat_capstan_braid.png" alt="Dynamic Cosserat Rods and Bioinspired Mechanics" loading="lazy" />
+          </div>
+          <div class="al-card-body">
+            <h3 class="al-card-title" data-en="Dynamic Cosserat Rods &amp; Bioinspired Self-Burrowing Robotics" data-zh="动态 Cosserat 杆力学与仿生自钻埋播种机器人">
+              Dynamic Cosserat Rods &amp; Bioinspired Self-Burrowing Robotics
+            </h3>
+            <p class="al-card-text"
+               data-en="Matrix-free Discontinuous Galerkin simulation of slender rods with frictional contact, supporting the design of seed-inspired aerial penetrating actuators (U.S. Provisional Patent No. 63/877,853) and marine DAS cables."
+               data-zh="细长杆大变形与摩擦接触的无矩阵间断伽辽金数值模拟，支撑仿生自钻埋空中播种器研发（美国临时专利 63/877,853）及海底传感光缆动力学分析。">
+              Matrix-free Discontinuous Galerkin simulation of slender rods with frictional contact, supporting the design of seed-inspired aerial penetrating actuators (U.S. Provisional Patent No. 63/877,853) and marine DAS cables.
+            </p>
+          </div>
+        </article>
+
+        <!-- Project 7: 3D Landslide Runout & Hazard Chain Modeling (Figure) -->
+        <article class="al-card sim-card" data-sim-category="computation">
+          <div class="al-card-media contain-media">
+            <span class="al-card-badge">LandslideDG · 3D Hazard Chain</span>
+            <button type="button" class="al-card-expand"
+                    data-lightbox-src="assets/img/landslide_nepal_3d.png"
+                    data-title-en="3D Discontinuous Galerkin Landslide Runout over Real DEM Topography"
+                    data-title-zh="真实数字高程地形下的三维间断伽辽金滑坡动力演进模拟"
+                    data-caption-en="High-resolution Discontinuous Galerkin simulation of 3D landslide propagation, entrainment, and hazard-chain runout over complex mountainous terrain.">
+              Expand
+            </button>
+            <img src="assets/img/landslide_nepal_3d.png" alt="3D Discontinuous Galerkin Landslide Runout" loading="lazy" />
+          </div>
+          <div class="al-card-body">
+            <h3 class="al-card-title" data-en="3D Landslide Runout &amp; Mountain Hazard Chain Modeling" data-zh="真实三维地形滑坡动力演进与灾害链数值模拟">
+              3D Landslide Runout &amp; Mountain Hazard Chain Modeling
+            </h3>
+            <p class="al-card-text"
+               data-en="Shock-capturing Discontinuous Galerkin solver for regional-scale 3D landslide propagation, basal friction evolution, and multi-hazard runout over high-resolution digital elevation models."
+               data-zh="面向复杂山区真实数字高程地形（DEM）的高精度激波捕捉间断伽辽金滑坡远程演进与灾害链模拟。">
+              Shock-capturing Discontinuous Galerkin solver for regional-scale 3D landslide propagation, basal friction evolution, and multi-hazard runout over high-resolution digital elevation models.
+            </p>
+          </div>
+        </article>
+
+        <!-- Project 8: Smart Construction through 3D Concrete Printing & Custom Sensors (Figure) -->
+        <article class="al-card sim-card" data-sim-category="sensing">
+          <div class="al-card-media">
+            <span class="al-card-badge">3D Concrete Printing · Custom Sensors</span>
+            <button type="button" class="al-card-expand"
+                    data-lightbox-src="assets/img/3DPC.jpg"
+                    data-title-en="Print-Integrated Fiber-Optic Sensing in 3D Concrete Printing"
+                    data-title-zh="混凝土 3D 打印同步嵌入分布式光纤传感与微裂纹预警"
+                    data-caption-en="Robotic co-extrusion embeds optical fibers directly into printed concrete filaments to map internal 3D strain fields and detect micro-crack initiation before brittle failure.">
+              Expand
+            </button>
+            <img src="assets/img/3DPC.jpg" alt="Print-integrated fiber-optic sensing in 3D printed concrete" loading="lazy" />
+          </div>
+          <div class="al-card-body">
+            <h3 class="al-card-title" data-en="Sensor-Integrated 3D Concrete Printing &amp; Miniature Probes" data-zh="传感集成式混凝土 3D 打印与微型光纤孔隙水压探头">
+              Sensor-Integrated 3D Concrete Printing &amp; Miniature Probes
+            </h3>
+            <p class="al-card-text"
+               data-en="Embeds optical fibers directly into concrete filaments during robotic extrusion for pre-failure fracture warning, complemented by custom miniature fiber-optic pore-pressure probes for unsaturated soil testing."
+               data-zh="在机器人挤出过程中将传感光纤直接嵌入 3D 打印混凝土层间实现失效前预警，并研发用于岩土测试的微型光纤孔隙水压探头。">
+              Embeds optical fibers directly into concrete filaments during robotic extrusion for pre-failure fracture warning, complemented by custom miniature fiber-optic pore-pressure probes for unsaturated soil testing.
+            </p>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Sponsored Research Grants Card -->
+      <div class="cv-card">
+        <h3 class="cv-card-title" data-en="Sponsored Research Projects" data-zh="参与的资助科研项目">
+          Sponsored Research Projects
+        </h3>
+        <ul class="cv-list">
+          <li class="cv-item">
+            <div class="cv-date-col"><span class="cv-date-badge">2024 – Present</span></div>
+            <div class="cv-main-col">
+              <div class="cv-role" data-en="NSF GCR: Rooted in Nature · Bioinspired Design of Sustainable Seeding Methods to Improve Forest Regeneration" data-zh="NSF GCR：根植自然 · 仿生可持续播种方法设计以促进森林再生">
+                NSF GCR: Rooted in Nature · Bioinspired Design of Sustainable Seeding Methods to Improve Forest Regeneration
+              </div>
+              <div class="cv-inst">National Science Foundation, Growing Convergence Research (Award No. 2428641) · University of Pennsylvania, UC Berkeley, Syracuse University</div>
+              <div class="cv-desc" data-en="Role: Numerical simulation of soil mechanics and multiphase poromechanics. Parallel Material Point Method (MPM) modeling of 3D cone penetration, rotary drilling, and tension cracking in sensitive clays. Sensing design and numerical simulation of bioinspired soft actuators, including a woven-structure single-fiber tactile skin prototype." data-zh="职责：土壤力学与多相多孔介质力学数值模拟；并行物质点法（MPM）三维静力触探、旋转钻进与灵敏黏土拉裂模拟；仿生软驱动器传感设计与数值模拟，研发单根光纤编织结构触觉皮肤原型。">
+                Role: Numerical simulation of soil mechanics and multiphase poromechanics. Parallel Material Point Method (MPM) modeling of 3D cone penetration, rotary drilling, and tension cracking in sensitive clays. Sensing design and numerical simulation of bioinspired soft actuators, including a woven-structure single-fiber tactile skin prototype.
+              </div>
+            </div>
+          </li>
+
+          <li class="cv-item">
+            <div class="cv-date-col"><span class="cv-date-badge">2025 – Present</span></div>
+            <div class="cv-main-col">
+              <div class="cv-role" data-en="USACE / FEMA: Embankment Dam Safety · Cracking and Seismic Limitations" data-zh="USACE / FEMA：土石坝安全 · 裂缝扩展与抗震评估">
+                USACE / FEMA: Embankment Dam Safety · Cracking and Seismic Limitations
+              </div>
+              <div class="cv-inst">U.S. Army Corps of Engineers (USACE Dam Safety Production Center, DSPC-T) &amp; Federal Emergency Management Agency (FEMA)</div>
+              <div class="cv-desc" data-en="Role: Matrix-free Discontinuous Galerkin and variational phase-field modeling of coupled thermo-hydro-mechanical (THM) desiccation and hydraulic crack networks in unsaturated embankment soils. Technical review and coordination on seismic risk and levee safety assessment." data-zh="职责：非饱和土堤坝热-水-力（THM）耦合干缩与水力裂缝网络扩展的无矩阵间断伽辽金及变分相场数值模拟；地震风险与堤防安全评估的技术审查与协调。">
+                Role: Matrix-free Discontinuous Galerkin and variational phase-field modeling of coupled thermo-hydro-mechanical (THM) desiccation and hydraulic crack networks in unsaturated embankment soils. Technical review and coordination on seismic risk and levee safety assessment.
+              </div>
+            </div>
+          </li>
+
+          <li class="cv-item">
+            <div class="cv-date-col"><span class="cv-date-badge">2026 – Present</span></div>
+            <div class="cv-main-col">
+              <div class="cv-role" data-en="DOE GTO: GeoSecure-RTS · Geothermal Security with Real-Time Simulation" data-zh="DOE GTO：GeoSecure-RTS · 基于实时仿真的地热安全系统">
+                DOE GTO: GeoSecure-RTS · Geothermal Security with Real-Time Simulation
+              </div>
+              <div class="cv-inst">U.S. Department of Energy (DOE), Office of Geothermal Technologies (GTO)</div>
+              <div class="cv-desc" data-en="Role: High-fidelity geothermal model development, calibration, and parametric studies. AI surrogate modeling and model-order reduction for real-time simulation and cyber-attack identification on geothermal power plants, with adaptive meshing and parallel efficiency improvements." data-zh="职责：高精度地热储层模型研发、标定与参数化研究；面向地热电站实时仿真与潜在网络攻击识别的 AI 代理模型与模型降阶；自适应网格与并行效率优化。">
+                Role: High-fidelity geothermal model development, calibration, and parametric studies. AI surrogate modeling and model-order reduction for real-time simulation and cyber-attack identification on geothermal power plants, with adaptive meshing and parallel efficiency improvements.
+              </div>
+            </div>
+          </li>
+
+          <li class="cv-item">
+            <div class="cv-date-col"><span class="cv-date-badge">2023 – Present</span></div>
+            <div class="cv-main-col">
+              <div class="cv-role" data-en="CEC: Integrated Monitoring of Cetacean and Ocean Environmental Impacts from Floating Offshore Wind Development" data-zh="CEC：漂浮式海上风电海洋环境影响与海底光缆综合监测">
+                CEC: Integrated Monitoring of Cetacean and Ocean Environmental Impacts from Floating Offshore Wind Development
+              </div>
+              <div class="cv-inst">California Energy Commission (Award No. CEC-EPC-23-002) · Lawrence Berkeley National Laboratory, UC Berkeley, MBARI, Optasense</div>
+              <div class="cv-desc" data-en="Role: High-fidelity numerical simulation of mooring lines and underwater rope structures. Development of efficient solvers for acoustic wave propagation under realistic oceanographic conditions." data-zh="职责：海上系泊缆与水下绳索结构的高精度数值模拟；实际海洋条件下声波传播高效求解器研发。">
+                Role: High-fidelity numerical simulation of mooring lines and underwater rope structures. Development of efficient solvers for acoustic wave propagation under realistic oceanographic conditions.
+              </div>
+            </div>
+          </li>
+
+          <li class="cv-item">
+            <div class="cv-date-col"><span class="cv-date-badge">2019 – 2024</span></div>
+            <div class="cv-main-col">
+              <div class="cv-role" data-en="NSF-UKRI SitS: Dynamic Coupling of Soil Structure and Gas Fluxes Measured with Distributed Sensor Systems" data-zh="NSF-UKRI SitS：利用分布式传感器系统测量土壤结构与气体通量的动态耦合">
+                NSF-UKRI SitS: Dynamic Coupling of Soil Structure and Gas Fluxes Measured with Distributed Sensor Systems
+              </div>
+              <div class="cv-inst">National Science Foundation / UK Research and Innovation, Signals in the Soil (Award No. 1935551) · UC Berkeley, Colorado School of Mines, Rothamsted Research</div>
+              <div class="cv-desc" data-en="Role: Development of distributed sensor systems, sensing system design, and signal processing for soil structure and gas flux monitoring." data-zh="职责：空间分布式光纤传感器系统研发、土壤结构与气体通量监测的传感系统设计与信号处理。">
+                Role: Development of distributed sensor systems, sensing system design, and signal processing for soil structure and gas flux monitoring.
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="fixed-bottom-footer">
+    <div class="container">
+      © Copyright 2026 Yaobin Yang. Styled with <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="noopener">al-folio</a> design · Hosted by <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>.
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal for Videos & High-Res Figures -->
+  <div class="modal-backdrop" id="lightbox-modal" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title" id="lightbox-title">Media Preview</div>
+        <button type="button" class="modal-close" id="close-lightbox" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <img src="" alt="Full-resolution preview" class="lightbox-img" id="lightbox-img" />
+        <video id="lightbox-video" class="lightbox-video" controls playsinline loop style="display:none;"></video>
+        <p class="lightbox-caption" id="lightbox-caption"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

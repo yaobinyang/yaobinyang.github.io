@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Publications | Yaobin Yang · UC Berkeley</title>
+  <meta name="description" content="Peer-reviewed journal articles, conference papers, patent, and doctoral dissertation of Dr. Yaobin Yang, UC Berkeley." />
+  <meta name="author" content="Yaobin Yang" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&family=Roboto+Slab:wght@300;400;500;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- Fixed Top Navbar -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-brand" href="index.html">
+        <span class="font-weight-bold">Yaobin</span> Yang
+      </a>
+
+      <button class="navbar-toggler" id="navbar-toggler" type="button" aria-label="Toggle navigation">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+
+      <ul class="navbar-nav" id="navbar-nav">
+        <li><a class="nav-link" href="index.html" data-en="about" data-zh="关于">about</a></li>
+        <li><a class="nav-link active" href="publications.html" data-en="publications" data-zh="论文">publications</a></li>
+        <li><a class="nav-link" href="projects.html" data-en="projects" data-zh="项目与视频">projects</a></li>
+        <li><a class="nav-link" href="cv.html" data-en="cv" data-zh="履历">cv</a></li>
+        <li><a class="nav-link" href="teaching.html" data-en="teaching" data-zh="教学与服务">teaching</a></li>
+        <li class="nav-controls">
+          <button type="button" id="lang-toggle" class="nav-icon-btn" title="Switch Language (English / 中文)">中文</button>
+          <button type="button" id="theme-toggle" class="nav-icon-btn" title="Toggle Dark / Light Theme" aria-label="Toggle Theme"></button>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <div class="container mt-5">
+    <div class="post publications">
+
+      <header class="post-header">
+        <h1 class="post-title" data-en="publications" data-zh="学术论文与专利 (publications)">publications</h1>
+        <p class="desc" data-en="Published and accepted peer-reviewed scholarship · * denotes corresponding author." data-zh="已发表与正式录用的学术成果 · * 表示通讯作者。">
+          Published and accepted peer-reviewed scholarship · * denotes corresponding author.
+        </p>
+      </header>
+
+      <div class="pub-filter-bar">
+        <div class="pub-tabs">
+          <button type="button" class="pub-tab active" data-filter="all" data-en="All (14)" data-zh="全部 (14)">All (14)</button>
+          <button type="button" class="pub-tab" data-filter="journal" data-en="Journal Articles (6)" data-zh="期刊论文 (6)">Journal Articles (6)</button>
+          <button type="button" class="pub-tab" data-filter="preprint" data-en="Preprints (2)" data-zh="预印本 (2)">Preprints (2)</button>
+          <button type="button" class="pub-tab" data-filter="conference" data-en="Conferences &amp; Chapters (4)" data-zh="会议论文与章节 (4)">Conferences &amp; Chapters (4)</button>
+          <button type="button" class="pub-tab" data-filter="patent" data-en="Patent &amp; Thesis (2)" data-zh="专利与学位论文 (2)">Patent &amp; Thesis (2)</button>
+        </div>
+        <input type="text" id="pub-search" class="pub-search-input"
+               placeholder="Filter publications..."
+               data-en="Filter publications..."
+               data-zh="搜索论文标题、期刊或作者..." />
+      </div>
+
+      <!-- 2027 Group -->
+      <div class="pub-year-group">
+        <h2 class="year">2027</h2>
+        <ol class="bibliography">
+          <li class="pub-item" data-category="conference">
+            <div class="pub-row">
+              <div class="pub-abbr-col">
+                <span class="pub-badge conference">ASCE 2027</span>
+              </div>
+              <div class="pub-main-col">
+                <div class="title">Fiber-optic Miniature Pore Pressure Probe: Design, Fabrication and Application</div>
+                <div class="author"><em><u>Yaobin Yang*</u></em>, Linqing Luo, Kenichi Soga, and Xiang Sun*</div>
+                <div class="periodical"><em>In ASCE Conference 2027</em> (Accepted Abstract, Paper Forthcoming, ID: ASCE2027-288), 2027</div>
+                <div class="links">
+                  <button type="button" class="btn-sm" data-toggle-abs="abs-pore2027">ABS</button>
+                  <button type="button" class="btn-sm" data-bibtex="yang2027porepressure">BIB</button>
+                </div>
+                <div id="abs-pore2027" class="pub-drawer">
+                  Design, micro-fabrication, calibration, and soil testing validation of a custom miniature fiber-optic pore-water pressure probe capable of resolving localized transient pore pressure evolution in unsaturated and saturated soils.
+                </div>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <!-- 2026 Group -->
+      <div class="pub-year-group">
+        <h2 class="year">2026</h2>
+        <ol class="bibliography">
+          <!-- 1. GRL 2026 (Published Online) -->
+          <li class="pub-item" data-category="journal">
+            <div class="pub-row">
+              <div class="pub-abbr-col">
+                <span class="pub-badge">GRL</span>
+              </div>
+              <div class="pub-main-col">
+                <div class="title">Transforming Critical Water Pipelines into Seismic Fault Movement Sensors</div>
+                <div class="author">Maksymilian Jasiak, <em><u>Yaobin Yang*</u></em>, Chien-Chih Wang, Shih-Hung Chiu, Linqing Luo, Peter Hubbard, Yuankun Xu, Youqi Zhang, Roland Burgmann, and Kenichi Soga</div>
+                <div class="periodical"><em>Geophysical Research Letters</em>, Vol. 53, Issue 22, 2026</div>
+                <div class="links">
+                  <button type="button" class="btn-sm" data-toggle-abs="abs-grl2026">ABS</button>
+                  <button type="button" class="btn-sm" data-bibtex="TransformingCriticalWaterPipelines">BIB</button>
+                  <a href="https://doi.org/10.1029/2026GL123978" target="_blank" rel="noopener" class="btn-sm">DOI</a>
+                  <a href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026GL123978" target="_blank" rel="noopener" class="btn-sm">HTML</a>
+                </div>
+                <div id="abs-grl2026" class="pub-drawer">
+                  Demonstrates full-scale distributed fiber-optic strain and temperature sensing paired with Cosserat rod kinematic modeling on an operating municipal water transmission pipeline crossing the active Hayward Fault, resolving slow fault-driven ground deformation at millimeter-per-year precision.
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- 2. JOES 2026 (Accepted) -->
+          <li class="pub-item" data-category="journal">
+            <div class="pub-row">
+              <div class="pub-abbr-col">
+                <span class="pub-badge">JOES</span>
+                <span class="pub-status-note" data-en="Accepted" data-zh="已录用">Accepted</span>
+              </div>
+              <div class="pub-main-col">
+                <div class="title">Flow-Induced Vibration Suppression for Distributed Fiber Optic Sensing Cables in Turbulent Marine Environments</div>
+                <div class="author">Linqing Luo*, <em><u>Yaobin Yang</u></em>, Kenichi Soga, John Ryan, and Yuxin Wu</div>
+                <div class="periodical"><em>Journal of Ocean Engineering and Science</em>, 2026 (Accepted)</div>
+                <div class="links">
+                  <button type="button" class="btn-sm" data-toggle-abs="abs-joes2026">ABS</button>
+                  <button type="button" class="btn-sm" data-bibtex="luo2026flowinduced">BIB</button>
+                </div>
+                <div id="abs-joes2026" class="pub-drawer">
+                  Investigates hydrodynamic vibration suppression strategies for marine distributed fiber-optic sensing cables subjected to turbulent ocean currents, improving acoustic and strain signal fidelity for offshore infrastructure and seafloor monitoring.
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- 2. ASCE JGGE 2026 (Published Online) -->
+          <li class="pub-item" data-category="journal">
+            <div class="pub-row">
+              <div class="pub-abbr-col">
+                <span class="pub-badge">ASCE JGGE</span>
+              </div>
+              <div class="pub-main-col">
+                <div class="title">Distributed Fiber Optic Sensing for Monitoring Piles under Eccentric Load</div>
+                <div class="author">Gyu-Beom Shin, <em><u>Yaobin Yang*</u></em>, Loizos Pelecanos, Federica Angela Mevoli, Andrew Yeskoo, Tom Shantz, and Kenichi Soga</div>
+                <div class="periodical"><em>Journal of Geotechnical and Geoenvironmental Engineering</em>, Vol. 152, Issue 9, 04026089, 2026</div>
+                <div class="links">
+                  <button type="button" class="btn-sm" data-toggle-abs="abs-jgge2026">ABS</button>
+                  <button type="button" class="btn-sm" data-bibtex="Shin_EccentricLoad">BIB</button>
+                  <a href="https://doi.org/10.1061/JGGEFK.GTENG-14998" target="_blank" rel="noopener" class="btn-sm">DOI</a>
+                  <a href="https://ascelibrary.org/doi/10.1061/JGGEFK.GTENG-14998" target="_blank" rel="noopener" class="btn-sm">HTML</a>
+                </div>
+                <div id="abs-jgge2026" class="pub-drawer">
+                  Field investigation of cast-in-drilled-hole (CIDH) piles subjected to eccentric loading, combining continuous distributed fiber-optic sensing (DFOS), 3D Cosserat rod shape reconstruction with stochastic error envelopes, and coupled axial-lateral finite element inverse analysis to quantify nonlinear soil reaction curves and construction-induced eccentricities.
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- 3. CompGeo 2026 -->
+          <li class="pub-item" data-category="journal">
+            <div class="pub-row">
+              <div class="pub-abbr-col">
+                <span class="pub-badge">CompGeo</span>
+              </div>
+              <div class="pub-main-col">
+                <div class="title">Inference of pile capacity from distributed strain sensing via PDE-constrained optimization</div>
+                <div class="author"><em><u>Yaobin Yang</u></em>, Gyu-Beom Shin*, Loizos Pelecanos, Chien-Chih Wang, Linqing Luo, and Kenichi Soga</div>
+                <div class="periodical"><em>Computers and Geotechnics</em>, Vol. 196, 108131, 2026</div>
+                <div class="links">
+                  <button type="button" class="btn-sm" data-toggle-abs="abs-compgeo2026">ABS</button>
+                  <button type="button" class="btn-sm" data-bibtex="YANG2026108131">BIB</button>
+                  <a href="https://doi.org/10.1016/j.compgeo.2026.108131" target="_blank" rel="noopener" class="btn-sm">DOI</a>
+                </div>
+                <div id="abs-compgeo2026" class="pub-drawer">
+                  Formulates a partial-differential-equation-constrained optimization (PDECO) inverse modeling framework that assimilates high-resolution distributed fiber-optic strain profiles to infer shaft friction mobilization, base resistance, and nonlinear soil-pile interaction directly from continuum equilibrium constraints.
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- Preprint 1. CMAME (SSRN 2026) -->
+          <li class="pub-item" data-category="preprint">
+            <div class="pub-row">
+              <div class="pub-abbr-col">
+                <span class="pub-badge">SSRN</span>
+                <span class="pub-status-note" data-en="Under Review" data-zh="在审">Under Review</span>
+              </div>
+              <div class="pub-main-col">
+                <div class="title">A Matrix-Free Discontinuous Galerkin Method for Dynamic Cosserat Rod Simulation</div>
+                <div class="author"><em><u>Yaobin Yang*</u></em>, Teng Zhang, Krishna Kumar, Kenichi Soga, Claudio Matias Perez, Linqing Luo, and Gyu-Beom Shin</div>
+                <div class="periodical"><em>Under Review at Computer Methods in Applied Mechanics and Engineering</em> (SSRN Preprint 7417101), 2026</div>
+                <div class="links">
+                  <button type="button" class="btn-sm" data-toggle-abs="abs-cmame2026">ABS</button>
+                  <button type="button" class="btn-sm" data-bibtex="yang2026matrixfree">BIB</button>
+                  <a href="https://ssrn.com/abstract=7417101" target="_blank" rel="noopener" class="btn-sm">SSRN</a>
+                  <a href="https://doi.org/10.2139/ssrn.7417101" target="_blank" rel="noopener" class="btn-sm">DOI</a>
+                </div>
+                <div id="abs-cmame2026" class="pub-drawer">
+                  Develops a high-order matrix-free Discontinuous Galerkin formulation for nonlinear dynamic Cosserat rods on SE(3), enabling efficient simulation of large deformations, instabilities, and frictional contact in slender structures, bioinspired self-burrowing systems, and marine cables.
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- Preprint 2. TRC (SSRN 2026) -->
+          <li class="pub-item" data-category="preprint">
+            <div class="pub-row">
+              <div class="pub-abbr-col">
+                <span class="pub-badge">SSRN</span>
+                <span class="pub-status-note" data-en="Under Review" data-zh="在审">Under Review</span>
+              </div>
+              <div class="pub-main-col">
+                <div class="title">Optimal Control Modeling for Switched Systems in Traffic Evacuation</div>
+                <div class="author">Yanglan Wang, Maria Laura Delle Monache, <em><u>Yaobin Yang</u></em>, and Kenichi Soga</div>
+                <div class="periodical"><em>Under Review at Transportation Research Part C: Emerging Technologies</em> (SSRN Preprint 6727554), 2026</div>
+                <div class="links">
+                  <button type="button" class="btn-sm" data-bibtex="Wang2026OptimalControl">BIB</button>
+                  <a href="https://ssrn.com/abstract=6727554" target="_blank" rel="noopener" class="btn-sm">SSRN</a>
+                  <a href="https://doi.org/10.2139/ssrn.6727554" target="_blank" rel="noopener" class="btn-sm">DOI</a>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <!-- 2025 Group -->
+      <div class="pub-year-group">
+        <h2 class="year">2025</h2>
+        <ol class="bibliography">
+          <!-- 4. MSSP 2025 -->
+          <li class="pub-item" data-category="journal">
+            <div class="pub-row">
+              <div class="pub-abbr-col">
+                <span class="pub-badge">MSSP</span>
+              </div>
+              <div class="pub-main-col">
+                <div class="title">Cosserat rod-based modeling and stochastic analysis for distributed fiber optics shape-sensing</div>
+                <div class="author"><em><u>Yaobin Yang*</u></em>, Linqing Luo, Maksymilian Jasiak, Chien-Chih Wang, Shih-Hung Chiu, and Kenichi Soga</div>
+                <div class="periodical"><em>Mechanical Systems and Signal Processing</em>, Vol. 241, 113457, 2025</div>
+                <div class="links">
+                  <button type="button" class="btn-sm" data-toggle-abs="abs-mssp2025">ABS</button>
+                  <button type="button" class="btn-sm" data-bibtex="yang2025cosserat">BIB</button>
+                  <a href="https://doi.org/10.1016/j.ymssp.2025.113457" target="_blank" rel="noopener" class="btn-sm">DOI</a>
+                  <a href="https://github.com/yaobinyang/Shape-sensing-matlab-code" target="_blank" rel="noopener" class="btn-sm">CODE</a>
+                  <a href="https://www.youtube.com/shorts/V-f6sZhzwOA" target="_blank" rel="noopener" class="btn-sm">VIDEO</a>
+                </div>
+                <div id="abs-mssp2025" class="pub-drawer">
+                  Establishes a 3D shape-sensing framework combining distributed fiber-optic strain measurements with Cosserat rod kinematics and Lie-group stochastic error propagation, providing analytical uncertainty bounds validated against real-time experimental reconstructions.
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- US Patent 2025 -->
+          <li class="pub-item" data-category="patent">
+            <div class="pub-row">
+              <div class="pub-abbr-col">
+                <span class="pub-badge patent">U.S. Patent</span>
+              </div>
+              <div class="pub-main-col">
+                <div class="title">Flying Driller: Gravity- and Inertia-Driven Penetration with Seed-inspired Flight Behavior for Enhanced Aerial Seeding</div>
+                <div class="author">U.S. Provisional Patent Application No. <strong>63/877,853</strong> (Filed September 2025)</div>
+                <div class="periodical"><em>United States Patent and Trademark Office (USPTO)</em>, 2025</div>
+                <div class="links">
+                  <button type="button" class="btn-sm" data-bibtex="flyingdriller2025">BIB</button>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <!-- 2024 Group -->
+      <div class="pub-year-group">
+        <h2 class="year">2024</h2>
+        <ol class="bibliography">
+          <!-- Ph.D. Thesis -->
+          <li class="pub-item" data-category="patent">
+            <div class="pub-row">
+              <div class="pub-abbr-col">
+                <span class="pub-badge thesis">Ph.D. Thesis</span>
+              </div>
+              <div class="pub-main-col">
+                <div class="title">Discontinuous Galerkin Finite Element Analysis and Experimental Sensors Innovations for Unsaturated Soil</div>
+                <div class="author"><em><u>Yaobin Yang</u></em> (Advisor: Prof. Kenichi Soga)</div>
+                <div class="periodical"><em>Ph.D. Dissertation</em>, University of California, Berkeley, December 2024</div>
+                <div class="links">
+                  <button type="button" class="btn-sm" data-bibtex="yang2024discontinuous">BIB</button>
+                  <a href="https://escholarship.org/uc/item/4gg741d8" target="_blank" rel="noopener" class="btn-sm">HTML</a>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- ASCE Pipelines 2024 -->
+          <li class="pub-item" data-category="conference">
+            <div class="pub-row">
+              <div class="pub-abbr-col">
+                <span class="pub-badge conference">Pipelines 2024</span>
+              </div>
+              <div class="pub-main-col">
+                <div class="title">Design and Installation of Distributed Fiber Optic Sensing Technology to Monitor HDPE Pipelines at an Earthquake Fault Crossing</div>
+                <div class="author">Krista Araica, Gus Cicala, Marshall P. McLeod, Kenichi Soga, Maksymilian Jasiak, Peter Hubbard, Chien-Chih Wang, <em><u>Yaobin Yang</u></em>, Linqing Luo, Andrew Yeskoo, et al.</div>
+                <div class="periodical"><em>In ASCE Pipelines 2024</em>, pp. 561–571, 2024</div>
+                <div class="links">
+                  <button type="button" class="btn-sm" data-bibtex="araica2024design">BIB</button>
+                  <a href="https://doi.org/10.1061/9780784485569.060" target="_blank" rel="noopener" class="btn-sm">DOI</a>
+                  <a href="https://ascelibrary.org/doi/10.1061/9780784485569.060" target="_blank" rel="noopener" class="btn-sm">HTML</a>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- Geo-Congress 2024 -->
+          <li class="pub-item" data-category="conference">
+            <div class="pub-row">
+              <div class="pub-abbr-col">
+                <span class="pub-badge conference">Geo-Congress</span>
+              </div>
+              <div class="pub-main-col">
+                <div class="title">Thermal Response Test of Geothermal Boreholes Using Distributed Fiber Optic Sensing</div>
+                <div class="author">Sumeet K. Sinha*, Jiahui Yang, <em><u>Yaobin Yang</u></em>, Asha Nigh, and Kenichi Soga</div>
+                <div class="periodical"><em>In ASCE Geo-Congress 2024</em>, pp. 493–503, 2024</div>
+                <div class="links">
+                  <button type="button" class="btn-sm" data-bibtex="sinha2024thermal">BIB</button>
+                  <a href="https://doi.org/10.1061/9780784485330.050" target="_blank" rel="noopener" class="btn-sm">DOI</a>
+                  <a href="https://ascelibrary.org/doi/10.1061/9780784485330.050" target="_blank" rel="noopener" class="btn-sm">HTML</a>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <!-- 2023 Group -->
+      <div class="pub-year-group">
+        <h2 class="year">2023</h2>
+        <ol class="bibliography">
+          <!-- 5. Energy 2023 -->
+          <li class="pub-item" data-category="journal">
+            <div class="pub-row">
+              <div class="pub-abbr-col">
+                <span class="pub-badge">Energy</span>
+              </div>
+              <div class="pub-main-col">
+                <div class="title">Numerical analysis of coupled thermal-hydro-chemo-mechanical (THCM) behavior to joint production of marine gas hydrate and shallow gas</div>
+                <div class="author">Fanbao Cheng, Xiang Sun*, Yanghui Li*, Xin Ju, <em><u>Yaobin Yang</u></em>, Xuanji Liu, Weiguo Liu, Mingjun Yang, and Yongchen Song</div>
+                <div class="periodical"><em>Energy</em>, Vol. 281, 128224, 2023</div>
+                <div class="links">
+                  <button type="button" class="btn-sm" data-bibtex="cheng2023numerical">BIB</button>
+                  <a href="https://doi.org/10.1016/j.energy.2023.128224" target="_blank" rel="noopener" class="btn-sm">DOI</a>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <!-- 2022 Group -->
+      <div class="pub-year-group">
+        <h2 class="year">2022</h2>
+        <ol class="bibliography">
+          <!-- AGU 2022 -->
+          <li class="pub-item" data-category="conference">
+            <div class="pub-row">
+              <div class="pub-abbr-col">
+                <span class="pub-badge conference">AGU</span>
+              </div>
+              <div class="pub-main-col">
+                <div class="title">Intermediate-scale testing of a spatially distributed sensing technology for monitoring greenhouse gas migration through vadose zone to the atmosphere</div>
+                <div class="author">Tissa H. Illangasekare*, Ana Maria Ilie, <em><u>Yaobin Yang</u></em>, Kenichi Soga, W. Richard Whalley, and Andrew Trautz</div>
+                <div class="periodical"><em>AGU Fall Meeting Abstracts</em>, Vol. 2022, H45J-1511, 2022</div>
+                <div class="links">
+                  <button type="button" class="btn-sm" data-bibtex="illangasekare2022intermediate">BIB</button>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="fixed-bottom-footer">
+    <div class="container">
+      © Copyright 2026 Yaobin Yang. Styled with <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="noopener">al-folio</a> design · Hosted by <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>.
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
