@@ -92,14 +92,6 @@ const BIBTEX_ENTRIES = {
   doi     = {10.2139/ssrn.7417101},
   url     = {https://ssrn.com/abstract=7417101}
 }`,
-  "Wang2026OptimalControl": `@unpublished{Wang2026OptimalControl,
-  author  = {Wang, Yanglan and {Delle Monache}, Maria Laura and Yang, Yaobin and Soga, Kenichi},
-  title   = {Optimal Control Modeling for Switched Systems in Traffic Evacuation},
-  year    = {2026},
-  note    = {Under Review at Transportation Research Part C: Emerging Technologies},
-  doi     = {10.2139/ssrn.6727554},
-  url     = {https://ssrn.com/abstract=6727554}
-}`,
   "illangasekare2022intermediate": `@inproceedings{illangasekare2022intermediate,
   title     = {Intermediate-scale testing of a spatially distributed sensing technology for monitoring greenhouse gas migration through vadose zone to the atmosphere},
   author    = {Illangasekare, Tissa H and Ilie, Ana Maria and Yang, Yaobin and Soga, Kenichi and Whalley, W Richard and Trautz, Andrew},
